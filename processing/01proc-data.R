@@ -25,7 +25,7 @@ rm(list = ls())
 
 # 2. Data --------------------------------------------------------------
 
-edumer_or <- rio::import(file = here("input", "data", "original", "170124_BDD_estudiantes.sav")) %>% 
+edumer_or <- rio::import(file = here("input", "data", "original", "300424_BDD_estudiantes.sav")) %>% 
   as_tibble()
 
 glimpse(edumer_or)
