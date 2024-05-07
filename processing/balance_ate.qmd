@@ -1,0 +1,168 @@
+---
+title: "Análisis Diseño Experimental"
+author: "Andreas Laffert, Asistente de Investigación"
+date: "06-05-2024"
+lang: es
+fontsize: 14pt
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    toc-expand: 2
+    toc-title: Contenidos
+    number-sections: true
+    number-depth: 3
+    theme:
+      light: journal
+---
+
+<style>
+.logo {
+    position: absolute;
+    top: 15px;
+    left: 30px;
+}
+</style>
+
+<img class="logo" src="logo/logo_edumer.png" width="200" height="170">
+
+<div style="text-align: justify">
+
+
+```{r}
+#| label: set
+#| echo: false
+#| message: false
+#| warning: false
+
+library(knitr)
+knitr::opts_chunk$set(echo = TRUE, include = TRUE, warning = FALSE, message = FALSE)
+
+```
+
+
+```{r}
+#| label: library
+#| echo: false
+
+if (!require("pacman")) install.packages("pacman")
+
+pacman::p_load(tidyverse,
+               sjmisc, 
+               sjPlot,
+               psych,
+               estimatr,
+               Matching,
+               ebal,
+               cobalt,
+               WeightIt,
+               rstatix,
+               summarytools,
+               here,
+               vtable,
+               texreg)
+
+options(scipen=999)
+rm(list = ls())
+```
+
+```{r}
+#| label: data
+#| echo: false
+#| output: false
+
+load(file = here("output", "db_proc.RData"))
+glimpse(db)
+
+```
+
+# Descriptivos
+
+```{r}
+#| label: tbl-summary
+#| tbl-cap: "Estadísticos descriptivos"
+#| tbl-cap-location: top
+
+colnames(db) <- sapply(colnames(db), function(x) paste(toupper(substring(x, 1, 1)), substring(x, 2), sep = ""))
+
+db %>% 
+  select(-Id) %>% 
+  mutate(Aleatorio = factor(Aleatorio, levels = 1:2, labels = c("Controles", "Tratados")),
+         Check_comprension = factor(Check_comprension, levels = 0:1, labels = c("No", "Si"))) %>% 
+  vtable::st(summ.names = c("N", "Media / Frecuencia", "Desv. Est.", "Min", "Pctl.25", "Pctl.75", "Max"), title = "Estadísticos descriptivos")
+
+```
+
+# Balance
+
+
+
+```{r}
+#| label: tbl-regbalance
+#| tbl-cap: "Regresión lineal OLS sobre asignación aleatoria por covariables"
+#| tbl-cap-location: top
+
+db <- db %>% 
+  janitor::clean_names() %>% 
+  select(-id) %>% 
+  mutate(aleatorio = if_else(aleatorio == 1, 1, 0),
+         across(
+           .cols = c(12:30),
+           .fns = ~ as.numeric(.)))
+
+m0 <- lm(aleatorio ~ sexo + edad + etni + religion + 
+     nivel_curso + dep_escuela + check_comprension,
+     data = db)
+
+tab_model(m0, show.se = T, show.ci = F, p.style = "stars", show.reflvl = T, string.pred = "Predictores", string.est = "Beta", string.intercept = "(Intercepto)", string.se = "ES", auto.label = T)
+
+```
+
+```{r}
+
+df_bal <- db %>% select(aleatorio, religion)
+
+bal1 <- MatchBalance(aleatorio ~.,
+                     data = df_bal,
+                     match.out = NULL, 
+                     ks =TRUE)
+
+bal1.label <- c("Evangelico", "Protestante", "Judio", "Creyente no adherente", "Ateo", "Agnostico", "Ninguna")
+
+# Funcion de ebal
+bal1.m1  <- baltest.collect(matchbal.out= bal1, var.names = bal1.label, after=FALSE)
+round(bal1.m1,2)  # Desbalance con relig creyente no adeherente (16.3) --> controlar por relig en modelos
+
+
+
+```
+
+
+
+
+# Estimación Average Treatment Effect
+
+
+
+```{r}
+#| label: tbl-ate
+#| tbl-cap: "Regresión OLS con ES robustos para variables dependientes"
+#| tbl-cap-location: top
+
+db <- db %>% 
+  rename(Aleatorio = aleatorio)
+
+dep_vars <- colnames(db[12:30])  
+
+results_list <- list()
+
+for(dep_var in dep_vars) {
+  formula <- as.formula(paste(dep_var, "~ Aleatorio + religion"))
+  result <- lm_robust(formula = formula, data = db, se_type = "HC2", alpha = 0.05)
+  results_list[[dep_var]] <- result
+}
+
+tab_model(results_list, show.se = T, show.ci = F, p.style = "stars", show.reflvl = T, string.pred = "Predictores", string.est = "Beta", string.intercept = "(Intercepto)", string.se = "ES", auto.label = T)
+
+```
+
