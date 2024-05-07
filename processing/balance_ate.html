@@ -177,7 +177,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>db <span class="sc">%&gt;%</span> </span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>Id) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Aleatorio =</span> <span class="fu">factor</span>(Aleatorio, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Controles"</span>, <span class="st">"Tratados"</span>)),</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Aleatorio =</span> <span class="fu">factor</span>(Aleatorio, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Tratados"</span>, <span class="st">"Controles"</span>)),</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">Check_comprension =</span> <span class="fu">factor</span>(Check_comprension, <span class="at">levels =</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"No"</span>, <span class="st">"Si"</span>))) <span class="sc">%&gt;%</span> </span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  vtable<span class="sc">::</span><span class="fu">st</span>(<span class="at">summ.names =</span> <span class="fu">c</span>(<span class="st">"N"</span>, <span class="st">"Media / Frecuencia"</span>, <span class="st">"Desv. Est."</span>, <span class="st">"Min"</span>, <span class="st">"Pctl.25"</span>, <span class="st">"Pctl.75"</span>, <span class="st">"Max"</span>), <span class="at">title =</span> <span class="st">"Estadísticos descriptivos"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -200,7 +200,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <tbody>
   <tr>
    <td style="text-align:left;"> Sexo </td>
-   <td style="text-align:left;"> 575 </td>
+   <td style="text-align:left;"> 749 </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -210,17 +210,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... Hombre </td>
-   <td style="text-align:left;"> 270 </td>
-   <td style="text-align:left;"> 47% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Mujer </td>
-   <td style="text-align:left;"> 279 </td>
+   <td style="text-align:left;"> 369 </td>
    <td style="text-align:left;"> 49% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -229,8 +219,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
    <td style="text-align:left;">  </td>
   </tr>
   <tr>
+   <td style="text-align:left;"> ... Mujer </td>
+   <td style="text-align:left;"> 345 </td>
+   <td style="text-align:left;"> 46% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
    <td style="text-align:left;"> ... Otro </td>
-   <td style="text-align:left;"> 26 </td>
+   <td style="text-align:left;"> 35 </td>
    <td style="text-align:left;"> 5% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -240,17 +240,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> Edad </td>
-   <td style="text-align:left;"> 575 </td>
+   <td style="text-align:left;"> 749 </td>
    <td style="text-align:left;"> 13 </td>
-   <td style="text-align:left;"> 1.6 </td>
+   <td style="text-align:left;"> 1.7 </td>
    <td style="text-align:left;"> 11 </td>
    <td style="text-align:left;"> 12 </td>
    <td style="text-align:left;"> 15 </td>
-   <td style="text-align:left;"> 22 </td>
+   <td style="text-align:left;"> 24 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Etni </td>
-   <td style="text-align:left;"> 573 </td>
+   <td style="text-align:left;"> 748 </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -260,8 +260,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... Mapuche </td>
-   <td style="text-align:left;"> 64 </td>
-   <td style="text-align:left;"> 11% </td>
+   <td style="text-align:left;"> 89 </td>
+   <td style="text-align:left;"> 12% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -270,7 +270,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... Rapa Nui </td>
-   <td style="text-align:left;"> 5 </td>
+   <td style="text-align:left;"> 9 </td>
    <td style="text-align:left;"> 1% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -280,7 +280,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... Quechua </td>
-   <td style="text-align:left;"> 2 </td>
+   <td style="text-align:left;"> 3 </td>
    <td style="text-align:left;"> 0% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -290,8 +290,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... No, ninguno anteriores </td>
-   <td style="text-align:left;"> 502 </td>
-   <td style="text-align:left;"> 88% </td>
+   <td style="text-align:left;"> 647 </td>
+   <td style="text-align:left;"> 86% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -300,7 +300,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> Religion </td>
-   <td style="text-align:left;"> 573 </td>
+   <td style="text-align:left;"> 746 </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -310,8 +310,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... Católico </td>
-   <td style="text-align:left;"> 212 </td>
-   <td style="text-align:left;"> 37% </td>
+   <td style="text-align:left;"> 285 </td>
+   <td style="text-align:left;"> 38% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -320,8 +320,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... Evangélico </td>
-   <td style="text-align:left;"> 44 </td>
-   <td style="text-align:left;"> 8% </td>
+   <td style="text-align:left;"> 54 </td>
+   <td style="text-align:left;"> 7% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -330,7 +330,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... Protestante </td>
-   <td style="text-align:left;"> 8 </td>
+   <td style="text-align:left;"> 9 </td>
    <td style="text-align:left;"> 1% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -340,7 +340,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... Judío </td>
-   <td style="text-align:left;"> 5 </td>
+   <td style="text-align:left;"> 6 </td>
    <td style="text-align:left;"> 1% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -350,7 +350,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... Creyente no adherente </td>
-   <td style="text-align:left;"> 32 </td>
+   <td style="text-align:left;"> 48 </td>
    <td style="text-align:left;"> 6% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -360,7 +360,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... Ateo </td>
-   <td style="text-align:left;"> 46 </td>
+   <td style="text-align:left;"> 57 </td>
    <td style="text-align:left;"> 8% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -370,8 +370,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... Agnóstico </td>
-   <td style="text-align:left;"> 22 </td>
-   <td style="text-align:left;"> 4% </td>
+   <td style="text-align:left;"> 37 </td>
+   <td style="text-align:left;"> 5% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -380,8 +380,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... Ninguna </td>
-   <td style="text-align:left;"> 204 </td>
-   <td style="text-align:left;"> 36% </td>
+   <td style="text-align:left;"> 250 </td>
+   <td style="text-align:left;"> 34% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -390,7 +390,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> Nivel_curso </td>
-   <td style="text-align:left;"> 575 </td>
+   <td style="text-align:left;"> 749 </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -400,8 +400,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... Basica </td>
-   <td style="text-align:left;"> 329 </td>
-   <td style="text-align:left;"> 57% </td>
+   <td style="text-align:left;"> 375 </td>
+   <td style="text-align:left;"> 50% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -410,8 +410,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... Media </td>
-   <td style="text-align:left;"> 246 </td>
-   <td style="text-align:left;"> 43% </td>
+   <td style="text-align:left;"> 374 </td>
+   <td style="text-align:left;"> 50% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -420,7 +420,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> Dep_escuela </td>
-   <td style="text-align:left;"> 575 </td>
+   <td style="text-align:left;"> 749 </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -430,8 +430,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... Colegio Particular Subvencionado </td>
-   <td style="text-align:left;"> 446 </td>
-   <td style="text-align:left;"> 78% </td>
+   <td style="text-align:left;"> 696 </td>
+   <td style="text-align:left;"> 93% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -441,7 +441,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <tr>
    <td style="text-align:left;"> ... Colegio Municipal </td>
    <td style="text-align:left;"> 53 </td>
-   <td style="text-align:left;"> 9% </td>
+   <td style="text-align:left;"> 7% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -450,8 +450,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... Colegio Privado </td>
-   <td style="text-align:left;"> 76 </td>
-   <td style="text-align:left;"> 13% </td>
+   <td style="text-align:left;"> 0 </td>
+   <td style="text-align:left;"> 0% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -460,18 +460,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> Aleatorio </td>
-   <td style="text-align:left;"> 575 </td>
+   <td style="text-align:left;"> 749 </td>
    <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Controles </td>
-   <td style="text-align:left;"> 300 </td>
-   <td style="text-align:left;"> 52% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -480,8 +470,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... Tratados </td>
-   <td style="text-align:left;"> 275 </td>
-   <td style="text-align:left;"> 48% </td>
+   <td style="text-align:left;"> 379 </td>
+   <td style="text-align:left;"> 51% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... Controles </td>
+   <td style="text-align:left;"> 370 </td>
+   <td style="text-align:left;"> 49% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -490,7 +490,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> Tratamiento </td>
-   <td style="text-align:left;"> 300 </td>
+   <td style="text-align:left;"> 379 </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -500,8 +500,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... Colegio Municipal </td>
-   <td style="text-align:left;"> 75 </td>
-   <td style="text-align:left;"> 25% </td>
+   <td style="text-align:left;"> 102 </td>
+   <td style="text-align:left;"> 27% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -510,8 +510,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... Colegio Privado </td>
-   <td style="text-align:left;"> 225 </td>
-   <td style="text-align:left;"> 75% </td>
+   <td style="text-align:left;"> 277 </td>
+   <td style="text-align:left;"> 73% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -520,7 +520,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> Control </td>
-   <td style="text-align:left;"> 275 </td>
+   <td style="text-align:left;"> 370 </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -530,8 +530,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... Colegio Municipal </td>
-   <td style="text-align:left;"> 54 </td>
-   <td style="text-align:left;"> 20% </td>
+   <td style="text-align:left;"> 96 </td>
+   <td style="text-align:left;"> 26% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -540,8 +540,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... Colegio Privado </td>
-   <td style="text-align:left;"> 221 </td>
-   <td style="text-align:left;"> 80% </td>
+   <td style="text-align:left;"> 274 </td>
+   <td style="text-align:left;"> 74% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -550,7 +550,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> Check_comprension </td>
-   <td style="text-align:left;"> 575 </td>
+   <td style="text-align:left;"> 749 </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -560,8 +560,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... No </td>
-   <td style="text-align:left;"> 129 </td>
-   <td style="text-align:left;"> 22% </td>
+   <td style="text-align:left;"> 198 </td>
+   <td style="text-align:left;"> 26% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -570,8 +570,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... Si </td>
-   <td style="text-align:left;"> 446 </td>
-   <td style="text-align:left;"> 78% </td>
+   <td style="text-align:left;"> 551 </td>
+   <td style="text-align:left;"> 74% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -580,7 +580,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> Merit_esfuerzo </td>
-   <td style="text-align:left;"> 573 </td>
+   <td style="text-align:left;"> 748 </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -590,8 +590,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... Muy en desacuerdo </td>
-   <td style="text-align:left;"> 39 </td>
-   <td style="text-align:left;"> 7% </td>
+   <td style="text-align:left;"> 48 </td>
+   <td style="text-align:left;"> 6% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -600,8 +600,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 150 </td>
-   <td style="text-align:left;"> 26% </td>
+   <td style="text-align:left;"> 206 </td>
+   <td style="text-align:left;"> 28% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -610,8 +610,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 295 </td>
-   <td style="text-align:left;"> 51% </td>
+   <td style="text-align:left;"> 375 </td>
+   <td style="text-align:left;"> 50% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -620,7 +620,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... Muy de acuerdo </td>
-   <td style="text-align:left;"> 89 </td>
+   <td style="text-align:left;"> 119 </td>
    <td style="text-align:left;"> 16% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -630,7 +630,157 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> Merit_talento </td>
-   <td style="text-align:left;"> 567 </td>
+   <td style="text-align:left;"> 741 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... Muy en desacuerdo </td>
+   <td style="text-align:left;"> 43 </td>
+   <td style="text-align:left;"> 6% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... En desacuerdo </td>
+   <td style="text-align:left;"> 162 </td>
+   <td style="text-align:left;"> 22% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... De acuerdo </td>
+   <td style="text-align:left;"> 417 </td>
+   <td style="text-align:left;"> 56% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... Muy de acuerdo </td>
+   <td style="text-align:left;"> 119 </td>
+   <td style="text-align:left;"> 16% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Percep_padres_ricos </td>
+   <td style="text-align:left;"> 739 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... Muy en desacuerdo </td>
+   <td style="text-align:left;"> 59 </td>
+   <td style="text-align:left;"> 8% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... En desacuerdo </td>
+   <td style="text-align:left;"> 164 </td>
+   <td style="text-align:left;"> 22% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... De acuerdo </td>
+   <td style="text-align:left;"> 251 </td>
+   <td style="text-align:left;"> 34% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... Muy de acuerdo </td>
+   <td style="text-align:left;"> 265 </td>
+   <td style="text-align:left;"> 36% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Percep_buenos_contactos </td>
+   <td style="text-align:left;"> 737 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... Muy en desacuerdo </td>
+   <td style="text-align:left;"> 40 </td>
+   <td style="text-align:left;"> 5% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... En desacuerdo </td>
+   <td style="text-align:left;"> 143 </td>
+   <td style="text-align:left;"> 19% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... De acuerdo </td>
+   <td style="text-align:left;"> 319 </td>
+   <td style="text-align:left;"> 43% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... Muy de acuerdo </td>
+   <td style="text-align:left;"> 235 </td>
+   <td style="text-align:left;"> 32% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Recom_esfuerzo </td>
+   <td style="text-align:left;"> 742 </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -641,106 +791,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <tr>
    <td style="text-align:left;"> ... Muy en desacuerdo </td>
    <td style="text-align:left;"> 34 </td>
-   <td style="text-align:left;"> 6% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 121 </td>
-   <td style="text-align:left;"> 21% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 320 </td>
-   <td style="text-align:left;"> 56% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy de acuerdo </td>
-   <td style="text-align:left;"> 92 </td>
-   <td style="text-align:left;"> 16% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Percep_padres_ricos </td>
-   <td style="text-align:left;"> 570 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy en desacuerdo </td>
-   <td style="text-align:left;"> 46 </td>
-   <td style="text-align:left;"> 8% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 136 </td>
-   <td style="text-align:left;"> 24% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 191 </td>
-   <td style="text-align:left;"> 34% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy de acuerdo </td>
-   <td style="text-align:left;"> 197 </td>
-   <td style="text-align:left;"> 35% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Percep_buenos_contactos </td>
-   <td style="text-align:left;"> 565 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy en desacuerdo </td>
-   <td style="text-align:left;"> 31 </td>
    <td style="text-align:left;"> 5% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -750,8 +800,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 128 </td>
-   <td style="text-align:left;"> 23% </td>
+   <td style="text-align:left;"> 66 </td>
+   <td style="text-align:left;"> 9% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -760,8 +810,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 237 </td>
-   <td style="text-align:left;"> 42% </td>
+   <td style="text-align:left;"> 243 </td>
+   <td style="text-align:left;"> 33% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -770,57 +820,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... Muy de acuerdo </td>
-   <td style="text-align:left;"> 169 </td>
-   <td style="text-align:left;"> 30% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Recom_esfuerzo </td>
-   <td style="text-align:left;"> 567 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy en desacuerdo </td>
-   <td style="text-align:left;"> 28 </td>
-   <td style="text-align:left;"> 5% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 55 </td>
-   <td style="text-align:left;"> 10% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 178 </td>
-   <td style="text-align:left;"> 31% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy de acuerdo </td>
-   <td style="text-align:left;"> 306 </td>
+   <td style="text-align:left;"> 399 </td>
    <td style="text-align:left;"> 54% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -830,7 +830,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> Recom_talento </td>
-   <td style="text-align:left;"> 567 </td>
+   <td style="text-align:left;"> 738 </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -840,8 +840,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... Muy en desacuerdo </td>
-   <td style="text-align:left;"> 45 </td>
-   <td style="text-align:left;"> 8% </td>
+   <td style="text-align:left;"> 55 </td>
+   <td style="text-align:left;"> 7% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -850,8 +850,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 235 </td>
-   <td style="text-align:left;"> 41% </td>
+   <td style="text-align:left;"> 288 </td>
+   <td style="text-align:left;"> 39% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -860,8 +860,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 202 </td>
-   <td style="text-align:left;"> 36% </td>
+   <td style="text-align:left;"> 274 </td>
+   <td style="text-align:left;"> 37% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -870,8 +870,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... Muy de acuerdo </td>
-   <td style="text-align:left;"> 85 </td>
-   <td style="text-align:left;"> 15% </td>
+   <td style="text-align:left;"> 121 </td>
+   <td style="text-align:left;"> 16% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -880,7 +880,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> Just_padres_ricos </td>
-   <td style="text-align:left;"> 569 </td>
+   <td style="text-align:left;"> 742 </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -890,57 +890,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... Muy en desacuerdo </td>
-   <td style="text-align:left;"> 58 </td>
-   <td style="text-align:left;"> 10% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 199 </td>
-   <td style="text-align:left;"> 35% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 264 </td>
-   <td style="text-align:left;"> 46% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy de acuerdo </td>
-   <td style="text-align:left;"> 48 </td>
-   <td style="text-align:left;"> 8% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Just_buenos_contactos </td>
-   <td style="text-align:left;"> 571 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy en desacuerdo </td>
-   <td style="text-align:left;"> 52 </td>
+   <td style="text-align:left;"> 70 </td>
    <td style="text-align:left;"> 9% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -950,8 +900,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 192 </td>
-   <td style="text-align:left;"> 34% </td>
+   <td style="text-align:left;"> 267 </td>
+   <td style="text-align:left;"> 36% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -960,7 +910,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 262 </td>
+   <td style="text-align:left;"> 340 </td>
    <td style="text-align:left;"> 46% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -971,136 +921,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <tr>
    <td style="text-align:left;"> ... Muy de acuerdo </td>
    <td style="text-align:left;"> 65 </td>
-   <td style="text-align:left;"> 11% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Igualdad_oportunidades </td>
-   <td style="text-align:left;"> 571 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy en desacuerdo </td>
-   <td style="text-align:left;"> 144 </td>
-   <td style="text-align:left;"> 25% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 189 </td>
-   <td style="text-align:left;"> 33% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 93 </td>
-   <td style="text-align:left;"> 16% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy de acuerdo </td>
-   <td style="text-align:left;"> 145 </td>
-   <td style="text-align:left;"> 25% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Percep_merecimiento </td>
-   <td style="text-align:left;"> 572 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy en desacuerdo </td>
-   <td style="text-align:left;"> 130 </td>
-   <td style="text-align:left;"> 23% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 280 </td>
-   <td style="text-align:left;"> 49% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 114 </td>
-   <td style="text-align:left;"> 20% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy de acuerdo </td>
-   <td style="text-align:left;"> 48 </td>
-   <td style="text-align:left;"> 8% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Escuela_esfuerzo </td>
-   <td style="text-align:left;"> 573 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy en desacuerdo </td>
-   <td style="text-align:left;"> 31 </td>
-   <td style="text-align:left;"> 5% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 51 </td>
    <td style="text-align:left;"> 9% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -1109,28 +929,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
    <td style="text-align:left;">  </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 274 </td>
-   <td style="text-align:left;"> 48% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy de acuerdo </td>
-   <td style="text-align:left;"> 217 </td>
-   <td style="text-align:left;"> 38% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Escuela_talento </td>
-   <td style="text-align:left;"> 574 </td>
+   <td style="text-align:left;"> Just_buenos_contactos </td>
+   <td style="text-align:left;"> 742 </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -1140,8 +940,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... Muy en desacuerdo </td>
-   <td style="text-align:left;"> 18 </td>
-   <td style="text-align:left;"> 3% </td>
+   <td style="text-align:left;"> 66 </td>
+   <td style="text-align:left;"> 9% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -1150,257 +950,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 78 </td>
-   <td style="text-align:left;"> 14% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 289 </td>
-   <td style="text-align:left;"> 50% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy de acuerdo </td>
-   <td style="text-align:left;"> 189 </td>
-   <td style="text-align:left;"> 33% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Escuela_calificaciones </td>
-   <td style="text-align:left;"> 569 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy en desacuerdo </td>
-   <td style="text-align:left;"> 22 </td>
-   <td style="text-align:left;"> 4% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 127 </td>
-   <td style="text-align:left;"> 22% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 309 </td>
-   <td style="text-align:left;"> 54% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy de acuerdo </td>
-   <td style="text-align:left;"> 111 </td>
-   <td style="text-align:left;"> 20% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Percep_desigualdad </td>
-   <td style="text-align:left;"> 573 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy en desacuerdo </td>
-   <td style="text-align:left;"> 28 </td>
-   <td style="text-align:left;"> 5% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 55 </td>
-   <td style="text-align:left;"> 10% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 242 </td>
-   <td style="text-align:left;"> 42% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy de acuerdo </td>
-   <td style="text-align:left;"> 248 </td>
-   <td style="text-align:left;"> 43% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Pref_redis </td>
-   <td style="text-align:left;"> 568 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy en desacuerdo </td>
-   <td style="text-align:left;"> 28 </td>
-   <td style="text-align:left;"> 5% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 124 </td>
-   <td style="text-align:left;"> 22% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 316 </td>
-   <td style="text-align:left;"> 56% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy de acuerdo </td>
-   <td style="text-align:left;"> 100 </td>
-   <td style="text-align:left;"> 18% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Just_edu </td>
-   <td style="text-align:left;"> 572 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy en desacuerdo </td>
-   <td style="text-align:left;"> 151 </td>
-   <td style="text-align:left;"> 26% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 223 </td>
-   <td style="text-align:left;"> 39% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 156 </td>
-   <td style="text-align:left;"> 27% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy de acuerdo </td>
-   <td style="text-align:left;"> 42 </td>
-   <td style="text-align:left;"> 7% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Just_salud </td>
-   <td style="text-align:left;"> 570 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy en desacuerdo </td>
-   <td style="text-align:left;"> 230 </td>
-   <td style="text-align:left;"> 40% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 187 </td>
+   <td style="text-align:left;"> 247 </td>
    <td style="text-align:left;"> 33% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -1410,8 +960,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 113 </td>
-   <td style="text-align:left;"> 20% </td>
+   <td style="text-align:left;"> 336 </td>
+   <td style="text-align:left;"> 45% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -1420,8 +970,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... Muy de acuerdo </td>
-   <td style="text-align:left;"> 40 </td>
-   <td style="text-align:left;"> 7% </td>
+   <td style="text-align:left;"> 93 </td>
+   <td style="text-align:left;"> 13% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -1429,8 +979,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
    <td style="text-align:left;">  </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Just_pension </td>
-   <td style="text-align:left;"> 572 </td>
+   <td style="text-align:left;"> Igualdad_oportunidades </td>
+   <td style="text-align:left;"> 745 </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -1441,26 +991,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <tr>
    <td style="text-align:left;"> ... Muy en desacuerdo </td>
    <td style="text-align:left;"> 182 </td>
-   <td style="text-align:left;"> 32% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 229 </td>
-   <td style="text-align:left;"> 40% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 139 </td>
    <td style="text-align:left;"> 24% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -1469,9 +999,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
    <td style="text-align:left;">  </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> ... Muy de acuerdo </td>
-   <td style="text-align:left;"> 22 </td>
-   <td style="text-align:left;"> 4% </td>
+   <td style="text-align:left;"> ... En desacuerdo </td>
+   <td style="text-align:left;"> 264 </td>
+   <td style="text-align:left;"> 35% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -1479,8 +1009,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
    <td style="text-align:left;">  </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Just_talento </td>
-   <td style="text-align:left;"> 573 </td>
+   <td style="text-align:left;"> ... De acuerdo </td>
+   <td style="text-align:left;"> 130 </td>
+   <td style="text-align:left;"> 17% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... Muy de acuerdo </td>
+   <td style="text-align:left;"> 169 </td>
+   <td style="text-align:left;"> 23% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Percep_merecimiento </td>
+   <td style="text-align:left;"> 745 </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -1490,8 +1040,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... Muy en desacuerdo </td>
-   <td style="text-align:left;"> 64 </td>
-   <td style="text-align:left;"> 11% </td>
+   <td style="text-align:left;"> 167 </td>
+   <td style="text-align:left;"> 22% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -1500,8 +1050,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 220 </td>
-   <td style="text-align:left;"> 38% </td>
+   <td style="text-align:left;"> 363 </td>
+   <td style="text-align:left;"> 49% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -1510,8 +1060,308 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </tr>
   <tr>
    <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 228 </td>
+   <td style="text-align:left;"> 149 </td>
+   <td style="text-align:left;"> 20% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... Muy de acuerdo </td>
+   <td style="text-align:left;"> 66 </td>
+   <td style="text-align:left;"> 9% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Escuela_esfuerzo </td>
+   <td style="text-align:left;"> 745 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... Muy en desacuerdo </td>
+   <td style="text-align:left;"> 37 </td>
+   <td style="text-align:left;"> 5% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... En desacuerdo </td>
+   <td style="text-align:left;"> 72 </td>
+   <td style="text-align:left;"> 10% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... De acuerdo </td>
+   <td style="text-align:left;"> 352 </td>
+   <td style="text-align:left;"> 47% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... Muy de acuerdo </td>
+   <td style="text-align:left;"> 284 </td>
+   <td style="text-align:left;"> 38% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Escuela_talento </td>
+   <td style="text-align:left;"> 745 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... Muy en desacuerdo </td>
+   <td style="text-align:left;"> 22 </td>
+   <td style="text-align:left;"> 3% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... En desacuerdo </td>
+   <td style="text-align:left;"> 91 </td>
+   <td style="text-align:left;"> 12% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... De acuerdo </td>
+   <td style="text-align:left;"> 382 </td>
+   <td style="text-align:left;"> 51% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... Muy de acuerdo </td>
+   <td style="text-align:left;"> 250 </td>
+   <td style="text-align:left;"> 34% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Escuela_calificaciones </td>
+   <td style="text-align:left;"> 742 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... Muy en desacuerdo </td>
+   <td style="text-align:left;"> 33 </td>
+   <td style="text-align:left;"> 4% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... En desacuerdo </td>
+   <td style="text-align:left;"> 162 </td>
+   <td style="text-align:left;"> 22% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... De acuerdo </td>
+   <td style="text-align:left;"> 393 </td>
+   <td style="text-align:left;"> 53% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... Muy de acuerdo </td>
+   <td style="text-align:left;"> 154 </td>
+   <td style="text-align:left;"> 21% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Percep_desigualdad </td>
+   <td style="text-align:left;"> 748 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... Muy en desacuerdo </td>
+   <td style="text-align:left;"> 35 </td>
+   <td style="text-align:left;"> 5% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... En desacuerdo </td>
+   <td style="text-align:left;"> 70 </td>
+   <td style="text-align:left;"> 9% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... De acuerdo </td>
+   <td style="text-align:left;"> 321 </td>
+   <td style="text-align:left;"> 43% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... Muy de acuerdo </td>
+   <td style="text-align:left;"> 322 </td>
+   <td style="text-align:left;"> 43% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Pref_redis </td>
+   <td style="text-align:left;"> 742 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... Muy en desacuerdo </td>
+   <td style="text-align:left;"> 35 </td>
+   <td style="text-align:left;"> 5% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... En desacuerdo </td>
+   <td style="text-align:left;"> 166 </td>
+   <td style="text-align:left;"> 22% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... De acuerdo </td>
+   <td style="text-align:left;"> 407 </td>
+   <td style="text-align:left;"> 55% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... Muy de acuerdo </td>
+   <td style="text-align:left;"> 134 </td>
+   <td style="text-align:left;"> 18% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Just_edu </td>
+   <td style="text-align:left;"> 744 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... Muy en desacuerdo </td>
+   <td style="text-align:left;"> 164 </td>
+   <td style="text-align:left;"> 22% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... En desacuerdo </td>
+   <td style="text-align:left;"> 301 </td>
    <td style="text-align:left;"> 40% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... De acuerdo </td>
+   <td style="text-align:left;"> 218 </td>
+   <td style="text-align:left;"> 29% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -1521,6 +1371,156 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <tr>
    <td style="text-align:left;"> ... Muy de acuerdo </td>
    <td style="text-align:left;"> 61 </td>
+   <td style="text-align:left;"> 8% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Just_salud </td>
+   <td style="text-align:left;"> 742 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... Muy en desacuerdo </td>
+   <td style="text-align:left;"> 278 </td>
+   <td style="text-align:left;"> 37% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... En desacuerdo </td>
+   <td style="text-align:left;"> 253 </td>
+   <td style="text-align:left;"> 34% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... De acuerdo </td>
+   <td style="text-align:left;"> 160 </td>
+   <td style="text-align:left;"> 22% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... Muy de acuerdo </td>
+   <td style="text-align:left;"> 51 </td>
+   <td style="text-align:left;"> 7% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Just_pension </td>
+   <td style="text-align:left;"> 745 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... Muy en desacuerdo </td>
+   <td style="text-align:left;"> 219 </td>
+   <td style="text-align:left;"> 29% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... En desacuerdo </td>
+   <td style="text-align:left;"> 300 </td>
+   <td style="text-align:left;"> 40% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... De acuerdo </td>
+   <td style="text-align:left;"> 188 </td>
+   <td style="text-align:left;"> 25% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... Muy de acuerdo </td>
+   <td style="text-align:left;"> 38 </td>
+   <td style="text-align:left;"> 5% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Just_talento </td>
+   <td style="text-align:left;"> 743 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... Muy en desacuerdo </td>
+   <td style="text-align:left;"> 93 </td>
+   <td style="text-align:left;"> 13% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... En desacuerdo </td>
+   <td style="text-align:left;"> 255 </td>
+   <td style="text-align:left;"> 34% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... De acuerdo </td>
+   <td style="text-align:left;"> 314 </td>
+   <td style="text-align:left;"> 42% </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... Muy de acuerdo </td>
+   <td style="text-align:left;"> 81 </td>
    <td style="text-align:left;"> 11% </td>
    <td style="text-align:left;">  </td>
    <td style="text-align:left;">  </td>
@@ -1566,18 +1566,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">(Intercepto)</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.39 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.35</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.63 <sup>*</sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.30</td>
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">check_comprension</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.07 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.05</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.02 <sup></sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.04</td>
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Edad</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.01 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.03</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.01 <sup></sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.02</td>
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Nivel Curso</td>
@@ -1591,13 +1591,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Mujer</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.04 <sup></sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.02 <sup></sup></td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.04</td>
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Otro</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.05 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.11</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.03 <sup></sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.09</td>
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Mapuche</td>
@@ -1606,23 +1606,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Rapa Nui</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.39 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.25</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.11 <sup></sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.18</td>
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Quechua</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.64 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.39</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.28 <sup></sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.31</td>
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">No, ninguno anteriores</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.03 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.07</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.02 <sup></sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.06</td>
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">nivel_cursoMedia</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.05 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.09</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.07 <sup></sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.08</td>
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Católico</td>
@@ -1632,37 +1632,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Evangélico</td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.02 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.09</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Protestante</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.31 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.20</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Judío</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.08 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.24</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Creyente no adherente</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.19 <sup>*</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.09</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Ateo</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.04 <sup></sup></td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.08</td>
 </tr>
 <tr>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Protestante</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.33 <sup></sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.18</td>
+</tr>
+<tr>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Judío</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.04 <sup></sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.22</td>
+</tr>
+<tr>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Creyente no adherente</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.05 <sup></sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.08</td>
+</tr>
+<tr>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Ateo</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.07 <sup></sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.07</td>
+</tr>
+<tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Agnóstico</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.07 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.11</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.00 <sup></sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.09</td>
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Ninguna</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.05 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.05</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.03 <sup></sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.04</td>
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Colegio Particular<br>Subvencionado</td>
@@ -1671,21 +1671,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Colegio Municipal</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.08 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.08</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.04 <sup></sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.07</td>
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Colegio Privado</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.08 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.06</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "><em>Reference</em></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "></td>
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm; border-top:1px solid;">Observations</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">572</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">746</td>
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">R<sup>2</sup> / R<sup>2</sup> adjusted</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.039 / 0.010</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.012 / -0.010</td>
 </tr>
 <tr>
 <td colspan="3" style="font-style:italic; border-top:double black; text-align:right;">* p&lt;0.05&nbsp;&nbsp;&nbsp;** p&lt;0.01&nbsp;&nbsp;&nbsp;*** p&lt;0.001</td>
@@ -1707,154 +1707,154 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>
 ***** (V1) religionEvangélico *****
 before matching:
-mean treatment........ 0.070234 
-mean control.......... 0.083942 
-std mean diff......... -5.3551 
+mean treatment........ 0.068966 
+mean control.......... 0.075881 
+std mean diff......... -2.7254 
 
-mean raw eQQ diff..... 0.014599 
+mean raw eQQ diff..... 0.0081301 
 med  raw eQQ diff..... 0 
 max  raw eQQ diff..... 1 
 
-mean eCDF diff........ 0.0068537 
-med  eCDF diff........ 0.0068537 
-max  eCDF diff........ 0.013707 
+mean eCDF diff........ 0.0034576 
+med  eCDF diff........ 0.0034576 
+max  eCDF diff........ 0.0069152 
 
-var ratio (Tr/Co)..... 0.84896 
-T-test p-value........ 0.54044 
+var ratio (Tr/Co)..... 0.91562 
+T-test p-value........ 0.71611 
 
 
 ***** (V2) religionProtestante *****
 before matching:
-mean treatment........ 0.010033 
-mean control.......... 0.018248 
-std mean diff......... -8.2287 
+mean treatment........ 0.005305 
+mean control.......... 0.01897 
+std mean diff......... -18.787 
 
-mean raw eQQ diff..... 0.010949 
+mean raw eQQ diff..... 0.01626 
 med  raw eQQ diff..... 0 
 max  raw eQQ diff..... 1 
 
-mean eCDF diff........ 0.0041074 
-med  eCDF diff........ 0.0041074 
-max  eCDF diff........ 0.0082147 
+mean eCDF diff........ 0.0068326 
+med  eCDF diff........ 0.0068326 
+max  eCDF diff........ 0.013665 
 
-var ratio (Tr/Co)..... 0.55426 
-T-test p-value........ 0.40931 
+var ratio (Tr/Co)..... 0.28353 
+T-test p-value........ 0.089666 
 
 
 ***** (V3) religionJudío *****
 before matching:
-mean treatment........ 0.010033 
-mean control.......... 0.0072993 
-std mean diff......... 2.7388 
+mean treatment........ 0.0079576 
+mean control.......... 0.0081301 
+std mean diff......... -0.19392 
+
+mean raw eQQ diff..... 0.00271 
+med  raw eQQ diff..... 0 
+max  raw eQQ diff..... 1 
+
+mean eCDF diff........ 0.000086261 
+med  eCDF diff........ 0.000086261 
+max  eCDF diff........ 0.00017252 
+
+var ratio (Tr/Co)..... 0.97889 
+T-test p-value........ 0.979 
+
+
+***** (V4) religionCreyente no adherente *****
+before matching:
+mean treatment........ 0.071618 
+mean control.......... 0.056911 
+std mean diff......... 5.6962 
+
+mean raw eQQ diff..... 0.01355 
+med  raw eQQ diff..... 0 
+max  raw eQQ diff..... 1 
+
+mean eCDF diff........ 0.0073537 
+med  eCDF diff........ 0.0073537 
+max  eCDF diff........ 0.014707 
+
+var ratio (Tr/Co)..... 1.2387 
+T-test p-value........ 0.41319 
+
+
+***** (V5) religionAteo *****
+before matching:
+mean treatment........ 0.066313 
+mean control.......... 0.086721 
+std mean diff......... -8.1907 
+
+mean raw eQQ diff..... 0.02168 
+med  raw eQQ diff..... 0 
+max  raw eQQ diff..... 1 
+
+mean eCDF diff........ 0.010204 
+med  eCDF diff........ 0.010204 
+max  eCDF diff........ 0.020408 
+
+var ratio (Tr/Co)..... 0.78171 
+T-test p-value........ 0.29542 
+
+
+***** (V6) religionAgnóstico *****
+before matching:
+mean treatment........ 0.050398 
+mean control.......... 0.04878 
+std mean diff......... 0.73835 
 
 mean raw eQQ diff..... 0 
 med  raw eQQ diff..... 0 
 max  raw eQQ diff..... 0 
 
-mean eCDF diff........ 0.0013671 
-med  eCDF diff........ 0.0013671 
-max  eCDF diff........ 0.0027342 
+mean eCDF diff........ 0.0008087 
+med  eCDF diff........ 0.0008087 
+max  eCDF diff........ 0.0016174 
 
-var ratio (Tr/Co)..... 1.3704 
-T-test p-value........ 0.72395 
-
-
-***** (V4) religionCreyente no adherente *****
-before matching:
-mean treatment........ 0.073579 
-mean control.......... 0.036496 
-std mean diff......... 14.179 
-
-mean raw eQQ diff..... 0.036496 
-med  raw eQQ diff..... 0 
-max  raw eQQ diff..... 1 
-
-mean eCDF diff........ 0.018541 
-med  eCDF diff........ 0.018541 
-max  eCDF diff........ 0.037082 
-
-var ratio (Tr/Co)..... 1.9379 
-T-test p-value........ 0.050381 
-
-
-***** (V5) religionAteo *****
-before matching:
-mean treatment........ 0.070234 
-mean control.......... 0.091241 
-std mean diff......... -8.2067 
-
-mean raw eQQ diff..... 0.021898 
-med  raw eQQ diff..... 0 
-max  raw eQQ diff..... 1 
-
-mean eCDF diff........ 0.010503 
-med  eCDF diff........ 0.010503 
-max  eCDF diff........ 0.021007 
-
-var ratio (Tr/Co)..... 0.78732 
-T-test p-value........ 0.35866 
-
-
-***** (V6) religionAgnóstico *****
-before matching:
-mean treatment........ 0.043478 
-mean control.......... 0.032847 
-std mean diff......... 5.2046 
-
-mean raw eQQ diff..... 0.0072993 
-med  raw eQQ diff..... 0 
-max  raw eQQ diff..... 1 
-
-mean eCDF diff........ 0.0053158 
-med  eCDF diff........ 0.0053158 
-max  eCDF diff........ 0.010632 
-
-var ratio (Tr/Co)..... 1.3087 
-T-test p-value........ 0.50659 
+var ratio (Tr/Co)..... 1.0313 
+T-test p-value........ 0.91909 
 
 
 ***** (V7) religionNinguna *****
 before matching:
-mean treatment........ 0.37458 
-mean control.......... 0.33577 
-std mean diff......... 8.0061 
+mean treatment........ 0.35279 
+mean control.......... 0.31707 
+std mean diff......... 7.4638 
 
-mean raw eQQ diff..... 0.036496 
+mean raw eQQ diff..... 0.03523 
 med  raw eQQ diff..... 0 
 max  raw eQQ diff..... 1 
 
-mean eCDF diff........ 0.019408 
-med  eCDF diff........ 0.019408 
-max  eCDF diff........ 0.038816 
+mean eCDF diff........ 0.017856 
+med  eCDF diff........ 0.017856 
+max  eCDF diff........ 0.035712 
 
-var ratio (Tr/Co)..... 1.0501 
-T-test p-value........ 0.33273 
+var ratio (Tr/Co)..... 1.0544 
+T-test p-value........ 0.30204 
 
 
-Before Matching Minimum p.value: 0.050381 
-Variable Name(s): religionCreyente no adherente  Number(s): 4 </code></pre>
+Before Matching Minimum p.value: 0.089666 
+Variable Name(s): religionProtestante  Number(s): 2 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>bal1.label <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Evangelico"</span>, <span class="st">"Protestante"</span>, <span class="st">"Judio"</span>, <span class="st">"Creyente no adherente"</span>, <span class="st">"Ateo"</span>, <span class="st">"Agnostico"</span>, <span class="st">"Ninguna"</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Funcion de ebal</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>bal1.m1  <span class="ot">&lt;-</span> <span class="fu">baltest.collect</span>(<span class="at">matchbal.out=</span> bal1, <span class="at">var.names =</span> bal1.label, <span class="at">after=</span><span class="cn">FALSE</span>)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(bal1.m1,<span class="dv">2</span>)  <span class="co"># Desbalance con relig creyente no adeherente (16.3) --&gt; controlar por relig en modelos</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(bal1.m1,<span class="dv">2</span>)  <span class="co"># Desbalance con relig creyente no adeherente (16.3) con menos casos, ahora no hay desbalance </span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>                      mean.Tr mean.Co sdiff sdiff.pooled var.ratio T pval
-Evangelico               0.07    0.08 -5.36        -5.13      0.85   0.54
-Protestante              0.01    0.02 -8.23        -6.95      0.55   0.41
-Judio                    0.01    0.01  2.74         2.95      1.37   0.72
-Creyente no adherente    0.07    0.04 14.18        16.29      1.94   0.05
-Ateo                     0.07    0.09 -8.21        -7.70      0.79   0.36
-Agnostico                0.04    0.03  5.20         5.54      1.31   0.51
-Ninguna                  0.37    0.34  8.01         8.10      1.05   0.33
+<pre><code>                      mean.Tr mean.Co  sdiff sdiff.pooled var.ratio T pval
+Evangelico               0.07    0.08  -2.73        -2.66      0.92   0.72
+Protestante              0.01    0.02 -18.79       -12.49      0.28   0.09
+Judio                    0.01    0.01  -0.19        -0.19      0.98   0.98
+Creyente no adherente    0.07    0.06   5.70         5.99      1.24   0.41
+Ateo                     0.07    0.09  -8.19        -7.67      0.78   0.30
+Agnostico                0.05    0.05   0.74         0.74      1.03   0.92
+Ninguna                  0.35    0.32   7.46         7.56      1.05   0.30
                       KS pval qqmeandiff qqmeddiff qqmaxdiff
-Evangelico                 NA       0.01      0.01      0.01
-Protestante                NA       0.00      0.00      0.01
+Evangelico                 NA       0.00      0.00      0.01
+Protestante                NA       0.01      0.01      0.01
 Judio                      NA       0.00      0.00      0.00
-Creyente no adherente      NA       0.02      0.02      0.04
+Creyente no adherente      NA       0.01      0.01      0.01
 Ateo                       NA       0.01      0.01      0.02
-Agnostico                  NA       0.01      0.01      0.01
+Agnostico                  NA       0.00      0.00      0.00
 Ninguna                    NA       0.02      0.02      0.04</code></pre>
 </div>
 </div>
@@ -1863,19 +1863,20 @@ Ninguna                    NA       0.02      0.02      0.04</code></pre>
 <h1 data-number="3"><span class="header-section-number">3</span> Estimación Average Treatment Effect</h1>
 <div class="cell tbl-cap-location-top">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>db <span class="ot">&lt;-</span> db <span class="sc">%&gt;%</span> </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Aleatorio =</span> aleatorio)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>dep_vars <span class="ot">&lt;-</span> <span class="fu">colnames</span>(db[<span class="dv">12</span><span class="sc">:</span><span class="dv">30</span>])  </span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>results_list <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(dep_var <span class="cf">in</span> dep_vars) {</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  formula <span class="ot">&lt;-</span> <span class="fu">as.formula</span>(<span class="fu">paste</span>(dep_var, <span class="st">"~ Aleatorio + religion"</span>))</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> <span class="fu">lm_robust</span>(<span class="at">formula =</span> formula, <span class="at">data =</span> db, <span class="at">se_type =</span> <span class="st">"HC2"</span>, <span class="at">alpha =</span> <span class="fl">0.05</span>)</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  results_list[[dep_var]] <span class="ot">&lt;-</span> result</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="fu">tab_model</span>(results_list, <span class="at">show.se =</span> T, <span class="at">show.ci =</span> F, <span class="at">p.style =</span> <span class="st">"stars"</span>, <span class="at">show.reflvl =</span> T, <span class="at">string.pred =</span> <span class="st">"Predictores"</span>, <span class="at">string.est =</span> <span class="st">"Beta"</span>, <span class="at">string.intercept =</span> <span class="st">"(Intercepto)"</span>, <span class="at">string.se =</span> <span class="st">"ES"</span>, <span class="at">auto.label =</span> T)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">aleatorio =</span> <span class="fu">factor</span>(aleatorio, <span class="at">levels =</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Control"</span>, <span class="st">"Tratamiento"</span>))) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Aleatorio =</span> aleatorio)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>dep_vars <span class="ot">&lt;-</span> <span class="fu">colnames</span>(db[<span class="dv">12</span><span class="sc">:</span><span class="dv">30</span>])  </span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>results_list <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(dep_var <span class="cf">in</span> dep_vars) {</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  formula <span class="ot">&lt;-</span> <span class="fu">as.formula</span>(<span class="fu">paste</span>(dep_var, <span class="st">"~ Aleatorio"</span>))</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> <span class="fu">lm_robust</span>(<span class="at">formula =</span> formula, <span class="at">data =</span> db, <span class="at">se_type =</span> <span class="st">"HC2"</span>, <span class="at">alpha =</span> <span class="fl">0.05</span>)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  results_list[[dep_var]] <span class="ot">&lt;-</span> result</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="fu">tab_model</span>(results_list, <span class="at">show.se =</span> T, <span class="at">show.ci =</span> F, <span class="at">p.style =</span> <span class="st">"stars"</span>, <span class="at">show.reflvl =</span> T, <span class="at">string.pred =</span> <span class="st">"Predictores"</span>, <span class="at">string.est =</span> <span class="st">"Beta"</span>, <span class="at">string.intercept =</span> <span class="st">"(Intercepto)"</span>, <span class="at">string.se =</span> <span class="st">"ES"</span>, <span class="at">auto.label =</span> T)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="tbl-ate" class="anchored">
 
@@ -1945,88 +1946,47 @@ Ninguna                    NA       0.02      0.02      0.04</code></pre>
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">(Intercepto)</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">2.84 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.06</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">2.83 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.06</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">2.95 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">0.08</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8">2.94 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">0.07</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">3.33 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  1">0.07</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2">2.62 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.07</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">2.55 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.06</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 6">2.58 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 7">0.07</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 8">2.55 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 9">0.09</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn0 0">2.24 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn0 1">0.07</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2">3.20 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.07</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">3.12 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.06</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  6">2.92 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  7">0.06</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  8">3.18 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  9">0.07</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">2.84 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  1">0.06</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2">2.12 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.07</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">1.96 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.08</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 6">1.96 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 7">0.07</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 8">2.45 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 9">0.07</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">2.78 <sup>***</sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.04</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">2.79 <sup>***</sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.04</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">3.02 <sup>***</sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">0.05</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8">3.02 <sup>***</sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">0.04</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">3.36 <sup>***</sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  1">0.04</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2">2.66 <sup>***</sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.04</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">2.59 <sup>***</sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.04</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 6">2.62 <sup>***</sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 7">0.04</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 8">2.38 <sup>***</sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 9">0.06</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn0 0">2.20 <sup>***</sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn0 1">0.05</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2">3.18 <sup>***</sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.04</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">3.11 <sup>***</sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.04</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  6">2.89 <sup>***</sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  7">0.04</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  8">3.21 <sup>***</sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  9">0.04</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">2.85 <sup>***</sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  1">0.04</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2">2.25 <sup>***</sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.05</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">1.99 <sup>***</sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.05</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 6">2.05 <sup>***</sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 7">0.04</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 8">2.49 <sup>***</sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 9">0.04</td>
 </tr>
 <tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Aleatorio</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.01 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.07</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.05 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.07</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.09 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">0.08</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8">-0.03 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">0.07</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">-0.01 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  1">0.07</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2">-0.10 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.07</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">-0.05 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.07</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 6">0.01 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 7">0.07</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 8">-0.00 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 9">0.09</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn0 0">-0.04 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn0 1">0.07</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2">0.00 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.07</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">0.05 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.06</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  6">0.06 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  7">0.06</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  8">0.06 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  9">0.07</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">0.04 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  1">0.06</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2">-0.01 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.08</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">-0.02 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.08</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 6">-0.00 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 7">0.07</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 8">0.04 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 9">0.07</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Católico</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Control</td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "><em>Reference</em></td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "></td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "><em>Reference</em></td>
@@ -2067,335 +2027,89 @@ Ninguna                    NA       0.02      0.02      0.04</code></pre>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 9"></td>
 </tr>
 <tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Evangélico</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.00 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.14</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.00 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.15</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.05 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">0.15</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Tratamiento</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.05 <sup></sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.06</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.07 <sup></sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.06</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.08 <sup></sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">0.07</td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8">-0.01 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">0.15</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">0.07 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  1">0.13</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2">0.15 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.15</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">-0.00 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.13</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 6">0.14 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 7">0.15</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 8">-0.17 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 9">0.17</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn0 0">0.10 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn0 1">0.14</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2">0.02 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.13</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">-0.01 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.12</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  6">-0.21 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  7">0.15</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  8">-0.16 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  9">0.13</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">-0.12 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  1">0.14</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2">-0.09 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.15</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">0.03 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.17</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 6">0.16 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 7">0.14</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 8">0.03 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 9">0.14</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Protestante</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.21 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.27</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.14 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.19</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.09 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">0.27</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8">0.22 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">0.41</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">0.01 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  1">0.34</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2">0.28 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.26</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">0.34 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.30</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 6">-0.09 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 7">0.27</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 8">0.32 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 9">0.31</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn0 0">0.27 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn0 1">0.28</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">0.06</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">-0.01 <sup></sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  1">0.06</td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2">-0.08 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.23</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">-0.02 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.35</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  6">0.18 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  7">0.24</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  8">-0.21 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  9">0.28</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">-0.56 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  1">0.36</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2">0.64 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.42</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">0.30 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.37</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 6">0.67 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 7">0.19</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 8">0.28 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 9">0.37</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Judío</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.03 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.59</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.07 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.49</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.89 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">0.54</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8">-0.32 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">0.52</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">-0.32 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  1">0.64</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2">0.44 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.45</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">-0.72 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.22</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 6">-0.19 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 7">0.40</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 8">-0.55 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 9">0.55</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn0 0">-0.22 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn0 1">0.46</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2">-1.00 <sup>*</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.49</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">-0.55 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.68</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  6">-0.96 <sup>*</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  7">0.44</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  8">-1.02 <sup>**</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  9">0.38</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">-0.26 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  1">0.26</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2">0.64 <sup>*</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.26</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">1.05 <sup>**</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.32</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 6">0.64 <sup>*</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 7">0.25</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 8">-0.08 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 9">0.25</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Creyente no adherente</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.11 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.14</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.00 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.14</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.18 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">0.19</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8">0.14 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">0.15</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">0.09 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  1">0.17</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2">-0.04 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.16</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">-0.17 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.15</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 6">0.03 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 7">0.17</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 8">-0.49 <sup>*</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 9">0.20</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn0 0">-0.41 <sup>**</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn0 1">0.15</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2">0.11 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.13</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">-0.09 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.17</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  6">0.04 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  7">0.13</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  8">0.15 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  9">0.15</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">-0.02 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  1">0.18</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2">-0.07 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.17</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">-0.32 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.16</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 6">-0.30 <sup>*</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 7">0.12</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 8">-0.20 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 9">0.15</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Ateo</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.42 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.12</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.26 <sup>*</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.13</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.48 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">0.14</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8">0.23 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">0.14</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">-0.02 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  1">0.15</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.06</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">-0.10 <sup></sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.06</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 6">-0.01 <sup></sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 7">0.06</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 8">0.01 <sup></sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 9">0.08</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn0 0">-0.09 <sup></sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn0 1">0.06</td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2">0.01 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.14</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">0.10 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.13</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 6">-0.11 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 7">0.13</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 8">-0.60 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 9">0.17</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn0 0">-0.33 <sup>**</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn0 1">0.12</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2">-0.14 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.13</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">0.09 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.12</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  6">-0.19 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  7">0.11</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  8">0.33 <sup>**</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  9">0.11</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">0.14 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  1">0.13</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2">0.09 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.15</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">-0.30 <sup>*</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.14</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 6">0.15 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 7">0.16</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 8">0.07 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 9">0.13</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Agnóstico</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.42 <sup>**</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.15</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.00 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.17</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.33 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">0.21</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8">0.35 <sup>*</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">0.16</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">0.40 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  1">0.11</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2">0.03 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.16</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">-0.11 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.17</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 6">-0.09 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 7">0.14</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 8">-0.73 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 9">0.22</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn0 0">-0.49 <sup>**</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn0 1">0.16</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2">-0.25 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.19</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">-0.06 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.14</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  6">-0.05 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  7">0.20</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  8">0.37 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  9">0.19</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">-0.04 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  1">0.15</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.06</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">0.08 <sup></sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.05</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  6">0.02 <sup></sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  7">0.06</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  8">0.06 <sup></sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  9">0.06</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">0.03 <sup></sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  1">0.06</td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2">-0.02 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.16</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">-0.35 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.18</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 6">-0.14 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 7">0.20</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 8">0.25 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 9">0.20</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Ninguna</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.04 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.08</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.03 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.07</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.04 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">0.09</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8">-0.00 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">0.09</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">-0.00 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  1">0.08</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2">-0.02 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.08</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">0.04 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.08</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 6">0.02 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 7">0.08</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 8">-0.04 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 9">0.11</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn0 0">-0.06 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn0 1">0.09</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2">-0.00 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.08</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.07</td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">-0.03 <sup></sup></td>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.07</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  6">-0.06 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  7">0.07</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  8">-0.00 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  9">0.08</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">0.02 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  1">0.07</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2">0.11 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.09</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">0.08 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.09</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 6">0.07 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 7">0.08</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 8">0.04 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 9">0.08</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 6">0.02 <sup></sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 7">0.06</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 8">0.06 <sup></sup></td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 9">0.06</td>
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm; border-top:1px solid;">Observations</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">572</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">566</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">568</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">564</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">565</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">566</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">568</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">570</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">570</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">571</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">572</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">573</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">568</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">572</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">567</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">571</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">569</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">571</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">572</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">748</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">741</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">739</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">737</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">742</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">738</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">742</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">742</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">745</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">745</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">745</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">745</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">742</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">748</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">742</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">744</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">742</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">745</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">743</td>
 </tr>
 <tr>
 <td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">R<sup>2</sup> / R<sup>2</sup> adjusted</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.028 / 0.014</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.010 / -0.004</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.037 / 0.023</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.014 / -0.000</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.011 / -0.003</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.010 / -0.004</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.017 / 0.003</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.005 / -0.009</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.042 / 0.028</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.034 / 0.020</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.020 / 0.006</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.008 / -0.006</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.024 / 0.010</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.042 / 0.028</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.014 / -0.000</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.015 / 0.001</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.036 / 0.022</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.027 / 0.013</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.010 / -0.004</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.001 / -0.000</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.002 / 0.001</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.002 / 0.000</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.000 / -0.001</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.000 / -0.001</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.002 / 0.001</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.004 / 0.002</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.000 / -0.001</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.000 / -0.001</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.002 / 0.001</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.000 / -0.001</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.003 / 0.002</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.000 / -0.001</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.001 / -0.000</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.000 / -0.001</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.000 / -0.001</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.000 / -0.001</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.000 / -0.001</td>
+<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.001 / -0.000</td>
 </tr>
 <tr>
 <td colspan="39" style="font-style:italic; border-top:double black; text-align:right;">* p&lt;0.05&nbsp;&nbsp;&nbsp;** p&lt;0.01&nbsp;&nbsp;&nbsp;*** p&lt;0.001</td>
