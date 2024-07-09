@@ -18,6 +18,7 @@ datos_estudiantes <- read_sav("input/data/original/300424_BDD_estudiantes.sav")
 
 #p1_1 (en chile, las personas son recompensadas por su esfuerzo)
 #p1_2 (en chile, las personas son recompensadas por su inteligencia y habilidad)
+#p1_10 (En Chile, todas las personas obtienen lo que merecen)
 #p2_1 (quienes se esfuerzan obtienen buenas notas)
 #p2_2 (en esta esceula, queines son inteligentes obtienen buenas notas)
 #p2_3 (en esta escuela, los/as estudiantes obtienen las notas que se merecen)
@@ -33,28 +34,30 @@ datos_estudiantes <- read_sav("input/data/original/300424_BDD_estudiantes.sav")
 frq(datos_estudiantes$tratamiento)
 
 proc_datos_estudiantes <- datos_estudiantes %>% select(aleatorio,
-                                                       p1_1, p1_2, 
-                                                       p2_1, p2_2, p2_3, p9_3, 
-                                                       p9_4, p9_5, d3_def, p26, p27, 
+                                                       p1_1, p1_2, p1_10,
+                                                       p2_1, p2_2, p2_3, 
+                                                       p9_3, p9_4, p9_5, 
+                                                       d3_def, p26, p27, 
                                                        p30, p20, check_atencion, tratamiento, control, d2)
 #renombrar 
 proc_datos_estudiantes <- proc_datos_estudiantes %>% rename(tratamiento, control,
-                                                           merit_esfuerzo = p1_1,
-                                                           merit_talento = p1_2,
-                                                           school_esfuerzo = p2_1,
-                                                           school_talento = p2_2,
-                                                           school_merito = p2_3,
-                                                           just_educ = p9_3,
-                                                           just_salud = p9_4,
-                                                           just_pensiones = p9_5,
-                                                           curso_estudiante = d3_def,
-                                                           ne_madre = p26,
-                                                           ne_padre = p27, 
-                                                           libros_hogar = p30,
-                                                           genero = p20,
-                                                           check_tratamiento = tratamiento,
-                                                           check_control = control,
-                                                           school_dependencia = d2)                                                            
+                                                            soc_esfuerzo = p1_1,
+                                                            soc_talento = p1_2,
+                                                            soc_merit = p1_10,
+                                                            school_esfuerzo = p2_1,
+                                                            school_talento = p2_2,
+                                                            school_merito = p2_3,
+                                                            just_educ = p9_3,
+                                                            just_salud = p9_4,
+                                                            just_pensiones = p9_5,
+                                                            curso_estudiante = d3_def,
+                                                            ne_madre = p26,
+                                                            ne_padre = p27, 
+                                                            libros_hogar = p30,
+                                                            genero = p20,
+                                                            check_tratamiento = tratamiento,
+                                                            check_control = control,
+                                                            school_dependencia = d2)                                                             
 
 # Comprobar
 names(proc_datos_estudiantes)
@@ -82,29 +85,38 @@ proc_datos_estudiantes$aleatorio <- factor(proc_datos_estudiantes$aleatorio,
 
 summary(proc_datos_estudiantes$aleatorio) #confirmar
 
-## merit_esfuerzo  ----
+## soc_esfuerzo  ----
 
 ### a. descriptivo basico ----
-frq(proc_datos_estudiantes$merit_esfuerzo) #buen sentido. Etiquetda.Casos perdidos:
-  #88 no sabe tiene 2 casos y 99 preferiria no responder 0 casos. 
+frq(proc_datos_estudiantes$soc_esfuerzo) #buen sentido. Etiquetda.Casos perdidos:
+#88 no sabe tiene 2 casos y 99 preferiria no responder 0 casos. 
 
 ### b. recodificacion ----
-proc_datos_estudiantes$merit_esfuerzo <- recode(proc_datos_estudiantes$merit_esfuerzo, "c(88,99)=NA")
+proc_datos_estudiantes$soc_esfuerzo <- recode(proc_datos_estudiantes$soc_esfuerzo, "c(88,99)=NA")
 
 ### c. etiqutamiento ----
-proc_datos_estudiantes$merit_esfuerzo <- set_label(x = proc_datos_estudiantes$merit_esfuerzo,label = 
-                                           "En Chile, las personas son recompensadas por su esfuerzo")
+proc_datos_estudiantes$soc_esfuerzo <- set_label(x = proc_datos_estudiantes$soc_esfuerzo,label = 
+                                                   "En Chile, las personas son recompensadas por su esfuerzo")
 
-get_label(proc_datos_estudiantes$merit_esfuerzo)
+get_label(proc_datos_estudiantes$soc_esfuerzo)
 
-## merit_talento ----
+## soc_talento ----
 
 ### a. descriptivo basico ----
-frq(proc_datos_estudiantes$merit_talento) #buen sentido. Etiquetada. Casos perdidos: 
-  #88 no sabe 7 casos, 99 preferiria no responder 1 caso 
+frq(proc_datos_estudiantes$soc_talento) #buen sentido. Etiquetada. Casos perdidos: 
+#88 no sabe 7 casos, 99 preferiria no responder 1 caso 
 
 ### b. recodificacion ----
-proc_datos_estudiantes$merit_talento <- recode(proc_datos_estudiantes$merit_talento, "c(88,99)=NA")
+proc_datos_estudiantes$soc_talento <- recode(proc_datos_estudiantes$soc_talento, "c(88,99)=NA")
+
+## soc_merit ----
+
+### a. descriptivo basico ----
+frq(proc_datos_estudiantes$soc_merit) #buen sentido. Etiquetada. Casos perdidos: 
+#88 no sabe 2 casos, 99 preferiria no responder 2 casos 
+
+### b. recodificacion ----
+proc_datos_estudiantes$soc_merit <- recode(proc_datos_estudiantes$soc_merit, "c(88,99)=NA")
 
 ## school_esfuerzo ----
 
@@ -296,14 +308,19 @@ proc_datos_estudiantes <- proc_datos_estudiantes %>%
   mutate(school_dependencia = case_when(
     school_dependencia %in% c(2, 3, 4, 7, 8, 10, 11) ~ 1,
     school_dependencia == 5 ~ 2,
-    school_dependencia == 6 ~ 3,
+    #    school_dependencia == 6 ~ 3,
     TRUE ~ NA_integer_
   ))
 
 proc_datos_estudiantes$school_dependencia <- factor(proc_datos_estudiantes$school_dependencia, 
-                                               levels=c(1,2,3),
-                                               labels=c("Colegio Particular Subvencionado", "Colegio Municipal","Colegio Privado"))
+                                                    levels=c(1,2),
+                                                    labels=c("Colegio Particular Subvencionado", "Colegio Municipal"))
 
+frq(proc_datos_estudiantes$school_dependencia)
+
+######## educacion padres----
+frq(proc_datos_estudiantes$ne_padre)
+frq(proc_datos_estudiantes$ne_madre)
 
 # 5. base procesada -----------------------------------------------------------
 proc_datos_estudiantes <-as.data.frame(proc_datos_estudiantes)

@@ -246,45 +246,45 @@ class: roja bottom right
 .pull-left-narrow[
 ####**Comprensión del experimento**]
 .pull-right-wide[
-![:scale 80%](https://educacion-meritocracia.github.io/edumer-ola1/processing/text-experiment_files/figure-html/comprension-curso-1.png)
+![:scale 80%](https://educacion-meritocracia.github.io/experimento/processing/test-experiment_files/figure-html/comprension-curso-1.png)
 ]
 
 ---
 .pull-left-narrow[
 ####**Comprensión del experimento**]
 .pull-right-wide[
-![:scale 80%](https://educacion-meritocracia.github.io/edumer-ola1/processing/text-experiment_files/figure-html/comprension-genero-1.png)
+![:scale 80%](https://educacion-meritocracia.github.io/experimento/processing/test-experiment_files/figure-html/comprension-genero-1.png)
 ]
 
 ---
 class: center
 
-![:scale 80%](https://educacion-meritocracia.github.io/edumer-ola1/processing/text-experiment_files/figure-html/merit-soc-experiment-1.png)
+![:scale 80%](https://educacion-meritocracia.github.io/experimento/processing/test-experiment_files/figure-html/merit-soc-experiment-1.png)
 
 ---
 class: center
 
-![:scale 80%](https://educacion-meritocracia.github.io/edumer-ola1/processing/text-experiment_files/figure-html/merit-soc-genero-1.png)
+![:scale 80%](https://educacion-meritocracia.github.io/experimento/processing/test-experiment_files/figure-html/merit-soc-genero-1.png)
 
 ---
 class: center
 
-![:scale 80%](https://educacion-meritocracia.github.io/edumer-ola1/processing/text-experiment_files/figure-html/merit-soc-curso-1.png)
+![:scale 80%](https://educacion-meritocracia.github.io/experimento/processing/test-experiment_files/figure-html/merit-soc-curso-1.png)
 
 ---
 class: center
 
-![:scale 80%](https://educacion-meritocracia.github.io/edumer-ola1/processing/text-experiment_files/figure-html/school-merit-experiment-1.png)
+![:scale 80%](https://educacion-meritocracia.github.io/experimento/processing/test-experiment_files/figure-html/school-merit-experiment-1.png)
 
 ---
 class: center
 
-![:scale 80%](https://educacion-meritocracia.github.io/edumer-ola1/processing/text-experiment_files/figure-html/school-merit-genero-1.png)
+![:scale 80%](https://educacion-meritocracia.github.io/experimento/processing/test-experiment_files/figure-html/school-merit-genero-1.png)
 
 ---
 class: center
 
-![:scale 80%](https://educacion-meritocracia.github.io/edumer-ola1/processing/text-experiment_files/figure-html/school-merit-curso-1.png)
+![:scale 80%](https://educacion-meritocracia.github.io/experimento/processing/test-experiment_files/figure-html/school-merit-curso-1.png)
 
 ---
 class: inverse
