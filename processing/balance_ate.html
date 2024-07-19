@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -18,11 +18,12 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -47,43 +48,13 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -97,7 +68,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="balance_ate_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="balance_ate_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="balance_ate_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-
 <script src="balance_ate_files/libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="balance_ate_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
@@ -108,13 +78,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-  <nav id="TOC" role="doc-toc" class="toc-active">
+  <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
     <h2 id="toc-title">Contenidos</h2>
    
   <ul class="collapse">
-  <li><a href="#descriptivos" id="toc-descriptivos" class="nav-link active" data-scroll-target="#descriptivos"><span class="toc-section-number">1</span>  Descriptivos</a></li>
-  <li><a href="#balance" id="toc-balance" class="nav-link" data-scroll-target="#balance"><span class="toc-section-number">2</span>  Balance</a></li>
-  <li><a href="#estimación-average-treatment-effect" id="toc-estimación-average-treatment-effect" class="nav-link" data-scroll-target="#estimación-average-treatment-effect"><span class="toc-section-number">3</span>  Estimación Average Treatment Effect</a></li>
+  <li><a href="#descriptivos" id="toc-descriptivos" class="nav-link active" data-scroll-target="#descriptivos"><span class="header-section-number">1</span> Descriptivos</a></li>
+  <li><a href="#balance" id="toc-balance" class="nav-link" data-scroll-target="#balance"><span class="header-section-number">2</span> Balance</a></li>
+  <li><a href="#estimación-average-treatment-effect" id="toc-estimación-average-treatment-effect" class="nav-link" data-scroll-target="#estimación-average-treatment-effect"><span class="header-section-number">3</span> Estimación Average Treatment Effect</a></li>
   </ul>
 </nav>
 </div>
@@ -147,7 +117,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </div>
   
 
+
 </header>
+
 
 <style>
 .logo {
@@ -156,1968 +128,1637 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     left: 30px;
 }
 </style>
-<p><img class="logo" src="logo/logo_edumer.png" width="200" height="170"></p>
+<p><img class="logo" src="edumer.png" width="200" height="170"></p>
 <div style="text-align: justify">
 
 
 
-<div class="cell">
-
-</div>
-<div class="cell">
-
-</div>
-<div class="cell">
-
-</div>
 <section id="descriptivos" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Descriptivos</h1>
-<div class="cell tbl-cap-location-top">
+<div class="cell" data-tbl-cap-location="top">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(db) <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="fu">colnames</span>(db), <span class="cf">function</span>(x) <span class="fu">paste</span>(<span class="fu">toupper</span>(<span class="fu">substring</span>(x, <span class="dv">1</span>, <span class="dv">1</span>)), <span class="fu">substring</span>(x, <span class="dv">2</span>), <span class="at">sep =</span> <span class="st">""</span>))</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>db <span class="sc">%&gt;%</span> </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>Id) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Aleatorio =</span> <span class="fu">factor</span>(Aleatorio, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Tratados"</span>, <span class="st">"Controles"</span>)),</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">Check_comprension =</span> <span class="fu">factor</span>(Check_comprension, <span class="at">levels =</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"No"</span>, <span class="st">"Si"</span>))) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  vtable<span class="sc">::</span><span class="fu">st</span>(<span class="at">summ.names =</span> <span class="fu">c</span>(<span class="st">"N"</span>, <span class="st">"Media / Frecuencia"</span>, <span class="st">"Desv. Est."</span>, <span class="st">"Min"</span>, <span class="st">"Pctl.25"</span>, <span class="st">"Pctl.75"</span>, <span class="st">"Max"</span>), <span class="at">title =</span> <span class="st">"Estadísticos descriptivos"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>Id_estudiante) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  vtable<span class="sc">::</span><span class="fu">st</span>(<span class="at">summ.names =</span> <span class="fu">c</span>(<span class="st">"N"</span>, <span class="st">"Media / Frecuencia"</span>, <span class="st">"Desv. Est."</span>, <span class="st">"Min"</span>, <span class="st">"Pctl.25"</span>, <span class="st">"Pctl.75"</span>, <span class="st">"Max"</span>), <span class="at">title =</span> <span class="st">"Estadísticos descriptivos"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tbl-summary" class="cell quarto-float anchored" data-tbl-cap-location="top">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;1: Estadísticos descriptivos
+</figcaption>
+<div aria-describedby="tbl-summary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-summary" class="anchored">
-
-<table class="table" style="margin-left: auto; margin-right: auto;">
-<caption>Tabla&nbsp;1:  Estadísticos descriptivos </caption>
- <thead>
-  <tr>
-   <th style="text-align:left;"> Variable </th>
-   <th style="text-align:left;"> N </th>
-   <th style="text-align:left;"> Media / Frecuencia </th>
-   <th style="text-align:left;"> Desv. Est. </th>
-   <th style="text-align:left;"> Min </th>
-   <th style="text-align:left;"> Pctl.25 </th>
-   <th style="text-align:left;"> Pctl.75 </th>
-   <th style="text-align:left;"> Max </th>
-  </tr>
- </thead>
+<div>
+<table class="table do-not-create-environment cell table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Estadísticos descriptivos</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Variable</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">N</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Media / Frecuencia</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Desv. Est.</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Min</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Pctl.25</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Pctl.75</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Max</th>
+</tr>
+</thead>
 <tbody>
-  <tr>
-   <td style="text-align:left;"> Sexo </td>
-   <td style="text-align:left;"> 749 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Hombre </td>
-   <td style="text-align:left;"> 369 </td>
-   <td style="text-align:left;"> 49% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Mujer </td>
-   <td style="text-align:left;"> 345 </td>
-   <td style="text-align:left;"> 46% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Otro </td>
-   <td style="text-align:left;"> 35 </td>
-   <td style="text-align:left;"> 5% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Edad </td>
-   <td style="text-align:left;"> 749 </td>
-   <td style="text-align:left;"> 13 </td>
-   <td style="text-align:left;"> 1.7 </td>
-   <td style="text-align:left;"> 11 </td>
-   <td style="text-align:left;"> 12 </td>
-   <td style="text-align:left;"> 15 </td>
-   <td style="text-align:left;"> 24 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Etni </td>
-   <td style="text-align:left;"> 748 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Mapuche </td>
-   <td style="text-align:left;"> 89 </td>
-   <td style="text-align:left;"> 12% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Rapa Nui </td>
-   <td style="text-align:left;"> 9 </td>
-   <td style="text-align:left;"> 1% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Quechua </td>
-   <td style="text-align:left;"> 3 </td>
-   <td style="text-align:left;"> 0% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... No, ninguno anteriores </td>
-   <td style="text-align:left;"> 647 </td>
-   <td style="text-align:left;"> 86% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Religion </td>
-   <td style="text-align:left;"> 746 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Católico </td>
-   <td style="text-align:left;"> 285 </td>
-   <td style="text-align:left;"> 38% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Evangélico </td>
-   <td style="text-align:left;"> 54 </td>
-   <td style="text-align:left;"> 7% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Protestante </td>
-   <td style="text-align:left;"> 9 </td>
-   <td style="text-align:left;"> 1% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Judío </td>
-   <td style="text-align:left;"> 6 </td>
-   <td style="text-align:left;"> 1% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Creyente no adherente </td>
-   <td style="text-align:left;"> 48 </td>
-   <td style="text-align:left;"> 6% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Ateo </td>
-   <td style="text-align:left;"> 57 </td>
-   <td style="text-align:left;"> 8% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Agnóstico </td>
-   <td style="text-align:left;"> 37 </td>
-   <td style="text-align:left;"> 5% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Ninguna </td>
-   <td style="text-align:left;"> 250 </td>
-   <td style="text-align:left;"> 34% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Nivel_curso </td>
-   <td style="text-align:left;"> 749 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Basica </td>
-   <td style="text-align:left;"> 375 </td>
-   <td style="text-align:left;"> 50% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Media </td>
-   <td style="text-align:left;"> 374 </td>
-   <td style="text-align:left;"> 50% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Dep_escuela </td>
-   <td style="text-align:left;"> 749 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Colegio Particular Subvencionado </td>
-   <td style="text-align:left;"> 696 </td>
-   <td style="text-align:left;"> 93% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Colegio Municipal </td>
-   <td style="text-align:left;"> 53 </td>
-   <td style="text-align:left;"> 7% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Colegio Privado </td>
-   <td style="text-align:left;"> 0 </td>
-   <td style="text-align:left;"> 0% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Aleatorio </td>
-   <td style="text-align:left;"> 749 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Tratados </td>
-   <td style="text-align:left;"> 379 </td>
-   <td style="text-align:left;"> 51% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Controles </td>
-   <td style="text-align:left;"> 370 </td>
-   <td style="text-align:left;"> 49% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Tratamiento </td>
-   <td style="text-align:left;"> 379 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Colegio Municipal </td>
-   <td style="text-align:left;"> 102 </td>
-   <td style="text-align:left;"> 27% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Colegio Privado </td>
-   <td style="text-align:left;"> 277 </td>
-   <td style="text-align:left;"> 73% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Control </td>
-   <td style="text-align:left;"> 370 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Colegio Municipal </td>
-   <td style="text-align:left;"> 96 </td>
-   <td style="text-align:left;"> 26% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Colegio Privado </td>
-   <td style="text-align:left;"> 274 </td>
-   <td style="text-align:left;"> 74% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Check_comprension </td>
-   <td style="text-align:left;"> 749 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... No </td>
-   <td style="text-align:left;"> 198 </td>
-   <td style="text-align:left;"> 26% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Si </td>
-   <td style="text-align:left;"> 551 </td>
-   <td style="text-align:left;"> 74% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Merit_esfuerzo </td>
-   <td style="text-align:left;"> 748 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy en desacuerdo </td>
-   <td style="text-align:left;"> 48 </td>
-   <td style="text-align:left;"> 6% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 206 </td>
-   <td style="text-align:left;"> 28% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 375 </td>
-   <td style="text-align:left;"> 50% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy de acuerdo </td>
-   <td style="text-align:left;"> 119 </td>
-   <td style="text-align:left;"> 16% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Merit_talento </td>
-   <td style="text-align:left;"> 741 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy en desacuerdo </td>
-   <td style="text-align:left;"> 43 </td>
-   <td style="text-align:left;"> 6% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 162 </td>
-   <td style="text-align:left;"> 22% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 417 </td>
-   <td style="text-align:left;"> 56% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy de acuerdo </td>
-   <td style="text-align:left;"> 119 </td>
-   <td style="text-align:left;"> 16% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Percep_padres_ricos </td>
-   <td style="text-align:left;"> 739 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy en desacuerdo </td>
-   <td style="text-align:left;"> 59 </td>
-   <td style="text-align:left;"> 8% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 164 </td>
-   <td style="text-align:left;"> 22% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 251 </td>
-   <td style="text-align:left;"> 34% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy de acuerdo </td>
-   <td style="text-align:left;"> 265 </td>
-   <td style="text-align:left;"> 36% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Percep_buenos_contactos </td>
-   <td style="text-align:left;"> 737 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy en desacuerdo </td>
-   <td style="text-align:left;"> 40 </td>
-   <td style="text-align:left;"> 5% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 143 </td>
-   <td style="text-align:left;"> 19% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 319 </td>
-   <td style="text-align:left;"> 43% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy de acuerdo </td>
-   <td style="text-align:left;"> 235 </td>
-   <td style="text-align:left;"> 32% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Recom_esfuerzo </td>
-   <td style="text-align:left;"> 742 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy en desacuerdo </td>
-   <td style="text-align:left;"> 34 </td>
-   <td style="text-align:left;"> 5% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 66 </td>
-   <td style="text-align:left;"> 9% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 243 </td>
-   <td style="text-align:left;"> 33% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy de acuerdo </td>
-   <td style="text-align:left;"> 399 </td>
-   <td style="text-align:left;"> 54% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Recom_talento </td>
-   <td style="text-align:left;"> 738 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy en desacuerdo </td>
-   <td style="text-align:left;"> 55 </td>
-   <td style="text-align:left;"> 7% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 288 </td>
-   <td style="text-align:left;"> 39% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 274 </td>
-   <td style="text-align:left;"> 37% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy de acuerdo </td>
-   <td style="text-align:left;"> 121 </td>
-   <td style="text-align:left;"> 16% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Just_padres_ricos </td>
-   <td style="text-align:left;"> 742 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy en desacuerdo </td>
-   <td style="text-align:left;"> 70 </td>
-   <td style="text-align:left;"> 9% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 267 </td>
-   <td style="text-align:left;"> 36% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 340 </td>
-   <td style="text-align:left;"> 46% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy de acuerdo </td>
-   <td style="text-align:left;"> 65 </td>
-   <td style="text-align:left;"> 9% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Just_buenos_contactos </td>
-   <td style="text-align:left;"> 742 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy en desacuerdo </td>
-   <td style="text-align:left;"> 66 </td>
-   <td style="text-align:left;"> 9% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 247 </td>
-   <td style="text-align:left;"> 33% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 336 </td>
-   <td style="text-align:left;"> 45% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy de acuerdo </td>
-   <td style="text-align:left;"> 93 </td>
-   <td style="text-align:left;"> 13% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Igualdad_oportunidades </td>
-   <td style="text-align:left;"> 745 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy en desacuerdo </td>
-   <td style="text-align:left;"> 182 </td>
-   <td style="text-align:left;"> 24% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 264 </td>
-   <td style="text-align:left;"> 35% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 130 </td>
-   <td style="text-align:left;"> 17% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy de acuerdo </td>
-   <td style="text-align:left;"> 169 </td>
-   <td style="text-align:left;"> 23% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Percep_merecimiento </td>
-   <td style="text-align:left;"> 745 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy en desacuerdo </td>
-   <td style="text-align:left;"> 167 </td>
-   <td style="text-align:left;"> 22% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 363 </td>
-   <td style="text-align:left;"> 49% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 149 </td>
-   <td style="text-align:left;"> 20% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy de acuerdo </td>
-   <td style="text-align:left;"> 66 </td>
-   <td style="text-align:left;"> 9% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Escuela_esfuerzo </td>
-   <td style="text-align:left;"> 745 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy en desacuerdo </td>
-   <td style="text-align:left;"> 37 </td>
-   <td style="text-align:left;"> 5% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 72 </td>
-   <td style="text-align:left;"> 10% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 352 </td>
-   <td style="text-align:left;"> 47% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy de acuerdo </td>
-   <td style="text-align:left;"> 284 </td>
-   <td style="text-align:left;"> 38% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Escuela_talento </td>
-   <td style="text-align:left;"> 745 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy en desacuerdo </td>
-   <td style="text-align:left;"> 22 </td>
-   <td style="text-align:left;"> 3% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 91 </td>
-   <td style="text-align:left;"> 12% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 382 </td>
-   <td style="text-align:left;"> 51% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy de acuerdo </td>
-   <td style="text-align:left;"> 250 </td>
-   <td style="text-align:left;"> 34% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Escuela_calificaciones </td>
-   <td style="text-align:left;"> 742 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy en desacuerdo </td>
-   <td style="text-align:left;"> 33 </td>
-   <td style="text-align:left;"> 4% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 162 </td>
-   <td style="text-align:left;"> 22% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 393 </td>
-   <td style="text-align:left;"> 53% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy de acuerdo </td>
-   <td style="text-align:left;"> 154 </td>
-   <td style="text-align:left;"> 21% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Percep_desigualdad </td>
-   <td style="text-align:left;"> 748 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy en desacuerdo </td>
-   <td style="text-align:left;"> 35 </td>
-   <td style="text-align:left;"> 5% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 70 </td>
-   <td style="text-align:left;"> 9% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 321 </td>
-   <td style="text-align:left;"> 43% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy de acuerdo </td>
-   <td style="text-align:left;"> 322 </td>
-   <td style="text-align:left;"> 43% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Pref_redis </td>
-   <td style="text-align:left;"> 742 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy en desacuerdo </td>
-   <td style="text-align:left;"> 35 </td>
-   <td style="text-align:left;"> 5% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 166 </td>
-   <td style="text-align:left;"> 22% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 407 </td>
-   <td style="text-align:left;"> 55% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy de acuerdo </td>
-   <td style="text-align:left;"> 134 </td>
-   <td style="text-align:left;"> 18% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Just_edu </td>
-   <td style="text-align:left;"> 744 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy en desacuerdo </td>
-   <td style="text-align:left;"> 164 </td>
-   <td style="text-align:left;"> 22% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 301 </td>
-   <td style="text-align:left;"> 40% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 218 </td>
-   <td style="text-align:left;"> 29% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy de acuerdo </td>
-   <td style="text-align:left;"> 61 </td>
-   <td style="text-align:left;"> 8% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Just_salud </td>
-   <td style="text-align:left;"> 742 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy en desacuerdo </td>
-   <td style="text-align:left;"> 278 </td>
-   <td style="text-align:left;"> 37% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 253 </td>
-   <td style="text-align:left;"> 34% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 160 </td>
-   <td style="text-align:left;"> 22% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy de acuerdo </td>
-   <td style="text-align:left;"> 51 </td>
-   <td style="text-align:left;"> 7% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Just_pension </td>
-   <td style="text-align:left;"> 745 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy en desacuerdo </td>
-   <td style="text-align:left;"> 219 </td>
-   <td style="text-align:left;"> 29% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 300 </td>
-   <td style="text-align:left;"> 40% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 188 </td>
-   <td style="text-align:left;"> 25% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy de acuerdo </td>
-   <td style="text-align:left;"> 38 </td>
-   <td style="text-align:left;"> 5% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Just_talento </td>
-   <td style="text-align:left;"> 743 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy en desacuerdo </td>
-   <td style="text-align:left;"> 93 </td>
-   <td style="text-align:left;"> 13% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... En desacuerdo </td>
-   <td style="text-align:left;"> 255 </td>
-   <td style="text-align:left;"> 34% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... De acuerdo </td>
-   <td style="text-align:left;"> 314 </td>
-   <td style="text-align:left;"> 42% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ... Muy de acuerdo </td>
-   <td style="text-align:left;"> 81 </td>
-   <td style="text-align:left;"> 11% </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:left;">  </td>
-  </tr>
+<tr class="odd">
+<td style="text-align: left;">Dep_escuela</td>
+<td style="text-align: left;">828</td>
+<td style="text-align: left;">7.3</td>
+<td style="text-align: left;">3.4</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">12</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Nivel_estudiante</td>
+<td style="text-align: left;">828</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... Básica</td>
+<td style="text-align: left;">395</td>
+<td style="text-align: left;">48%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... Media</td>
+<td style="text-align: left;">433</td>
+<td style="text-align: left;">52%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Asignacion</td>
+<td style="text-align: left;">828</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... Tratamiento</td>
+<td style="text-align: left;">403</td>
+<td style="text-align: left;">49%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... Control</td>
+<td style="text-align: left;">425</td>
+<td style="text-align: left;">51%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sexo</td>
+<td style="text-align: left;">828</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... Hombre</td>
+<td style="text-align: left;">405</td>
+<td style="text-align: left;">49%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... Mujer</td>
+<td style="text-align: left;">385</td>
+<td style="text-align: left;">46%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... Otro</td>
+<td style="text-align: left;">38</td>
+<td style="text-align: left;">5%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Edad</td>
+<td style="text-align: left;">828</td>
+<td style="text-align: left;">13</td>
+<td style="text-align: left;">1.6</td>
+<td style="text-align: left;">11</td>
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">15</td>
+<td style="text-align: left;">24</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Nacionalidad</td>
+<td style="text-align: left;">828</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... Chile</td>
+<td style="text-align: left;">746</td>
+<td style="text-align: left;">90%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... Otra</td>
+<td style="text-align: left;">82</td>
+<td style="text-align: left;">10%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Etnia</td>
+<td style="text-align: left;">828</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... Mapuche</td>
+<td style="text-align: left;">104</td>
+<td style="text-align: left;">13%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... Rapa Nui</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">1%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... Quechua</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">0%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... No, ninguno anteriores</td>
+<td style="text-align: left;">716</td>
+<td style="text-align: left;">86%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Religion</td>
+<td style="text-align: left;">828</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... Católico</td>
+<td style="text-align: left;">315</td>
+<td style="text-align: left;">38%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... Evangélico</td>
+<td style="text-align: left;">70</td>
+<td style="text-align: left;">8%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... Protestante</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">1%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... Judío</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">1%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... Creyente no adherente</td>
+<td style="text-align: left;">49</td>
+<td style="text-align: left;">6%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... Ateo</td>
+<td style="text-align: left;">68</td>
+<td style="text-align: left;">8%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... Agnóstico</td>
+<td style="text-align: left;">43</td>
+<td style="text-align: left;">5%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... Ninguna</td>
+<td style="text-align: left;">271</td>
+<td style="text-align: left;">33%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P1_1</td>
+<td style="text-align: left;">828</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... Muy en desacuerdo</td>
+<td style="text-align: left;">50</td>
+<td style="text-align: left;">6%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... En desacuerdo</td>
+<td style="text-align: left;">224</td>
+<td style="text-align: left;">27%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... De acuerdo</td>
+<td style="text-align: left;">434</td>
+<td style="text-align: left;">52%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... Muy de acuerdo</td>
+<td style="text-align: left;">120</td>
+<td style="text-align: left;">14%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P1_2</td>
+<td style="text-align: left;">828</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... Muy en desacuerdo</td>
+<td style="text-align: left;">49</td>
+<td style="text-align: left;">6%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... En desacuerdo</td>
+<td style="text-align: left;">173</td>
+<td style="text-align: left;">21%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... De acuerdo</td>
+<td style="text-align: left;">471</td>
+<td style="text-align: left;">57%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... Muy de acuerdo</td>
+<td style="text-align: left;">135</td>
+<td style="text-align: left;">16%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P1_3</td>
+<td style="text-align: left;">828</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... Muy en desacuerdo</td>
+<td style="text-align: left;">65</td>
+<td style="text-align: left;">8%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... En desacuerdo</td>
+<td style="text-align: left;">168</td>
+<td style="text-align: left;">20%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... De acuerdo</td>
+<td style="text-align: left;">275</td>
+<td style="text-align: left;">33%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... Muy de acuerdo</td>
+<td style="text-align: left;">320</td>
+<td style="text-align: left;">39%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P1_4</td>
+<td style="text-align: left;">828</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... Muy en desacuerdo</td>
+<td style="text-align: left;">43</td>
+<td style="text-align: left;">5%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... En desacuerdo</td>
+<td style="text-align: left;">147</td>
+<td style="text-align: left;">18%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... De acuerdo</td>
+<td style="text-align: left;">355</td>
+<td style="text-align: left;">43%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... Muy de acuerdo</td>
+<td style="text-align: left;">283</td>
+<td style="text-align: left;">34%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P1_5</td>
+<td style="text-align: left;">828</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... Muy en desacuerdo</td>
+<td style="text-align: left;">32</td>
+<td style="text-align: left;">4%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... En desacuerdo</td>
+<td style="text-align: left;">65</td>
+<td style="text-align: left;">8%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... De acuerdo</td>
+<td style="text-align: left;">280</td>
+<td style="text-align: left;">34%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... Muy de acuerdo</td>
+<td style="text-align: left;">451</td>
+<td style="text-align: left;">54%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P1_6</td>
+<td style="text-align: left;">828</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... Muy en desacuerdo</td>
+<td style="text-align: left;">63</td>
+<td style="text-align: left;">8%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... En desacuerdo</td>
+<td style="text-align: left;">313</td>
+<td style="text-align: left;">38%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... De acuerdo</td>
+<td style="text-align: left;">317</td>
+<td style="text-align: left;">38%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... Muy de acuerdo</td>
+<td style="text-align: left;">135</td>
+<td style="text-align: left;">16%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P1_7</td>
+<td style="text-align: left;">828</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... Muy en desacuerdo</td>
+<td style="text-align: left;">80</td>
+<td style="text-align: left;">10%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... En desacuerdo</td>
+<td style="text-align: left;">293</td>
+<td style="text-align: left;">35%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... De acuerdo</td>
+<td style="text-align: left;">382</td>
+<td style="text-align: left;">46%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... Muy de acuerdo</td>
+<td style="text-align: left;">73</td>
+<td style="text-align: left;">9%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P1_8</td>
+<td style="text-align: left;">828</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... Muy en desacuerdo</td>
+<td style="text-align: left;">70</td>
+<td style="text-align: left;">8%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... En desacuerdo</td>
+<td style="text-align: left;">253</td>
+<td style="text-align: left;">31%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... De acuerdo</td>
+<td style="text-align: left;">396</td>
+<td style="text-align: left;">48%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... Muy de acuerdo</td>
+<td style="text-align: left;">109</td>
+<td style="text-align: left;">13%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P1_9</td>
+<td style="text-align: left;">828</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... Muy en desacuerdo</td>
+<td style="text-align: left;">206</td>
+<td style="text-align: left;">25%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... En desacuerdo</td>
+<td style="text-align: left;">302</td>
+<td style="text-align: left;">36%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... De acuerdo</td>
+<td style="text-align: left;">148</td>
+<td style="text-align: left;">18%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... Muy de acuerdo</td>
+<td style="text-align: left;">172</td>
+<td style="text-align: left;">21%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P1_10</td>
+<td style="text-align: left;">828</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... Muy en desacuerdo</td>
+<td style="text-align: left;">192</td>
+<td style="text-align: left;">23%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... En desacuerdo</td>
+<td style="text-align: left;">412</td>
+<td style="text-align: left;">50%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... De acuerdo</td>
+<td style="text-align: left;">167</td>
+<td style="text-align: left;">20%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... Muy de acuerdo</td>
+<td style="text-align: left;">57</td>
+<td style="text-align: left;">7%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P9_1</td>
+<td style="text-align: left;">828</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... Muy en desacuerdo</td>
+<td style="text-align: left;">33</td>
+<td style="text-align: left;">4%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... En desacuerdo</td>
+<td style="text-align: left;">76</td>
+<td style="text-align: left;">9%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... De acuerdo</td>
+<td style="text-align: left;">346</td>
+<td style="text-align: left;">42%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... Muy de acuerdo</td>
+<td style="text-align: left;">373</td>
+<td style="text-align: left;">45%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P9_2</td>
+<td style="text-align: left;">828</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... Muy en desacuerdo</td>
+<td style="text-align: left;">33</td>
+<td style="text-align: left;">4%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... En desacuerdo</td>
+<td style="text-align: left;">181</td>
+<td style="text-align: left;">22%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... De acuerdo</td>
+<td style="text-align: left;">449</td>
+<td style="text-align: left;">54%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... Muy de acuerdo</td>
+<td style="text-align: left;">165</td>
+<td style="text-align: left;">20%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P9_3</td>
+<td style="text-align: left;">828</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... Muy en desacuerdo</td>
+<td style="text-align: left;">169</td>
+<td style="text-align: left;">20%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... En desacuerdo</td>
+<td style="text-align: left;">336</td>
+<td style="text-align: left;">41%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... De acuerdo</td>
+<td style="text-align: left;">244</td>
+<td style="text-align: left;">29%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... Muy de acuerdo</td>
+<td style="text-align: left;">79</td>
+<td style="text-align: left;">10%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P9_4</td>
+<td style="text-align: left;">828</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... Muy en desacuerdo</td>
+<td style="text-align: left;">302</td>
+<td style="text-align: left;">36%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... En desacuerdo</td>
+<td style="text-align: left;">287</td>
+<td style="text-align: left;">35%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... De acuerdo</td>
+<td style="text-align: left;">175</td>
+<td style="text-align: left;">21%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... Muy de acuerdo</td>
+<td style="text-align: left;">64</td>
+<td style="text-align: left;">8%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">P9_5</td>
+<td style="text-align: left;">828</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... Muy en desacuerdo</td>
+<td style="text-align: left;">250</td>
+<td style="text-align: left;">30%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... En desacuerdo</td>
+<td style="text-align: left;">329</td>
+<td style="text-align: left;">40%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... De acuerdo</td>
+<td style="text-align: left;">207</td>
+<td style="text-align: left;">25%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... Muy de acuerdo</td>
+<td style="text-align: left;">42</td>
+<td style="text-align: left;">5%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">P9_6</td>
+<td style="text-align: left;">828</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... Muy en desacuerdo</td>
+<td style="text-align: left;">97</td>
+<td style="text-align: left;">12%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... En desacuerdo</td>
+<td style="text-align: left;">284</td>
+<td style="text-align: left;">34%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">... De acuerdo</td>
+<td style="text-align: left;">362</td>
+<td style="text-align: left;">44%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">... Muy de acuerdo</td>
+<td style="text-align: left;">85</td>
+<td style="text-align: left;">10%</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
 </tbody>
 </table>
 
+
 </div>
+</div>
+</div>
+</figure>
 </div>
 </div>
 </section>
 <section id="balance" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Balance</h1>
-<div class="cell tbl-cap-location-top">
+<div class="cell" data-tbl-cap-location="top">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>db <span class="ot">&lt;-</span> db <span class="sc">%&gt;%</span> </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>id) <span class="sc">%&gt;%</span> </span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">aleatorio =</span> <span class="fu">if_else</span>(aleatorio <span class="sc">==</span> <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>         <span class="fu">across</span>(</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">.cols =</span> <span class="fu">c</span>(<span class="dv">12</span><span class="sc">:</span><span class="dv">30</span>),</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>           <span class="at">.fns =</span> <span class="sc">~</span> <span class="fu">as.numeric</span>(.)))</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>m0 <span class="ot">&lt;-</span> <span class="fu">lm</span>(aleatorio <span class="sc">~</span> sexo <span class="sc">+</span> edad <span class="sc">+</span> etni <span class="sc">+</span> religion <span class="sc">+</span> </span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>     nivel_curso <span class="sc">+</span> dep_escuela <span class="sc">+</span> check_comprension,</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>     <span class="at">data =</span> db)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">tab_model</span>(m0, <span class="at">show.se =</span> T, <span class="at">show.ci =</span> F, <span class="at">p.style =</span> <span class="st">"stars"</span>, <span class="at">show.reflvl =</span> T, <span class="at">string.pred =</span> <span class="st">"Predictores"</span>, <span class="at">string.est =</span> <span class="st">"Beta"</span>, <span class="at">string.intercept =</span> <span class="st">"(Intercepto)"</span>, <span class="at">string.se =</span> <span class="st">"ES"</span>, <span class="at">auto.label =</span> T)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>()</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>db1 <span class="ot">&lt;-</span> db <span class="sc">%&gt;%</span> </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>id_estudiante) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">asignacion =</span> <span class="fu">if_else</span>(asignacion <span class="sc">==</span> <span class="st">"Tratamiento"</span>, <span class="dv">1</span>, <span class="dv">0</span>))</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>m0 <span class="ot">&lt;-</span> <span class="fu">lm</span>(asignacion <span class="sc">~</span> sexo <span class="sc">+</span> edad <span class="sc">+</span> etnia <span class="sc">+</span> religion <span class="sc">+</span> </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>     nacionalidad <span class="sc">+</span> nivel_estudiante,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">data =</span> db1)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">tab_model</span>(m0, </span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>          <span class="at">show.se=</span><span class="cn">TRUE</span>,</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>          <span class="at">show.ci=</span><span class="cn">FALSE</span>,</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>          <span class="at">digits=</span><span class="dv">3</span>,</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>          <span class="at">p.style =</span> <span class="st">"stars"</span>,</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>          <span class="at">dv.labels =</span> <span class="st">"Modelo 1"</span>,</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>          <span class="at">string.pred =</span> <span class="st">"Predictores"</span>,</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>          <span class="at">string.est =</span> <span class="st">"β"</span>,</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>          <span class="at">show.reflvl =</span> T, </span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>          <span class="at">auto.label =</span> T)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tbl-regbalance" class="cell quarto-float anchored" data-tbl-cap-location="top">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-regbalance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;2: Regresión lineal OLS sobre asignación aleatoria por covariables
+</figcaption>
+<div aria-describedby="tbl-regbalance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-regbalance" class="anchored">
+<div>
+<table class="do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true">
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">&nbsp;</td>
+<td colspan="2" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">Modelo 1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">Predictores</td>
+<td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">β</td>
+<td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">std. Error</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">(Intercept)</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.662 <sup>*</sup></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.284</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">edad</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.015 <sup></sup></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.023</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">Hombre</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><em>Reference</em></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">Mujer</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.029 <sup></sup></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.036</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">Otro</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.059 <sup></sup></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.088</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">Mapuche</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><em>Reference</em></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">Rapa Nui</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.004 <sup></sup></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.213</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">Quechua</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.622 <sup></sup></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.397</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">No, ninguno anteriores</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.036 <sup></sup></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.054</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">Católico</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><em>Reference</em></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">Evangélico</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.057 <sup></sup></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.067</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">Protestante</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.205 <sup></sup></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.248</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">Judío</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.019 <sup></sup></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.202</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">Creyente no adherente</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.043 <sup></sup></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.078</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">Ateo</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.007 <sup></sup></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.068</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">Agnóstico</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.021 <sup></sup></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.083</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">Ninguna</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.018 <sup></sup></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.042</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">Chile</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><em>Reference</em></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">Otra</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.040 <sup></sup></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.060</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">Básica</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><em>Reference</em></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">Media</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.072 <sup></sup></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.076</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">Observations</td>
+<td colspan="2" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">828</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">R<sup>2</sup> / R<sup>2</sup> adjusted</td>
+<td colspan="2" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.009 / -0.010</td>
+</tr>
+<tr class="even">
+<td colspan="3" style="text-align: right; font-style: italic; border-top: double black;">* p&lt;0.05&nbsp;&nbsp;&nbsp;** p&lt;0.01&nbsp;&nbsp;&nbsp;*** p&lt;0.001</td>
+</tr>
+</tbody>
+</table>
 
-<table style="border-collapse:collapse; border:none;"><caption>Tabla&nbsp;2:  Regresión lineal OLS sobre asignación aleatoria por covariables </caption>
-<tbody><tr>
-<th style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm;  text-align:left; ">&nbsp;</th>
-<th colspan="2" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">aleatorio</th>
-</tr>
-<tr>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  text-align:left; ">Predictores</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">Beta</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">ES</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">(Intercepto)</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.63 <sup>*</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.30</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">check_comprension</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.02 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.04</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Edad</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.01 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.02</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Nivel Curso</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "><em>Reference</em></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "></td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Hombre</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "><em>Reference</em></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "></td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Mujer</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.02 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.04</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Otro</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.03 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.09</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Mapuche</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "><em>Reference</em></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "></td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Rapa Nui</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.11 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.18</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Quechua</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.28 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.31</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">No, ninguno anteriores</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.02 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.06</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">nivel_cursoMedia</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.07 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.08</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Católico</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "><em>Reference</em></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "></td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Evangélico</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.02 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.08</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Protestante</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.33 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.18</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Judío</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.04 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.22</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Creyente no adherente</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.05 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.08</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Ateo</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.07 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.07</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Agnóstico</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.00 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.09</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Ninguna</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.03 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.04</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Colegio Particular<br>Subvencionado</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "><em>Reference</em></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "></td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Colegio Municipal</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.04 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.07</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Colegio Privado</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "><em>Reference</em></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "></td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm; border-top:1px solid;">Observations</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">746</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">R<sup>2</sup> / R<sup>2</sup> adjusted</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.012 / -0.010</td>
-</tr>
-<tr>
-<td colspan="3" style="font-style:italic; border-top:double black; text-align:right;">* p&lt;0.05&nbsp;&nbsp;&nbsp;** p&lt;0.01&nbsp;&nbsp;&nbsp;*** p&lt;0.001</td>
-</tr>
-
-</tbody></table>
 
 </div>
 </div>
 </div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df_bal <span class="ot">&lt;-</span> db <span class="sc">%&gt;%</span> <span class="fu">select</span>(aleatorio, religion)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>bal1 <span class="ot">&lt;-</span> <span class="fu">MatchBalance</span>(aleatorio <span class="sc">~</span>.,</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">data =</span> df_bal,</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">match.out =</span> <span class="cn">NULL</span>, </span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>                     <span class="at">ks =</span><span class="cn">TRUE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-***** (V1) religionEvangélico *****
-before matching:
-mean treatment........ 0.068966 
-mean control.......... 0.075881 
-std mean diff......... -2.7254 
-
-mean raw eQQ diff..... 0.0081301 
-med  raw eQQ diff..... 0 
-max  raw eQQ diff..... 1 
-
-mean eCDF diff........ 0.0034576 
-med  eCDF diff........ 0.0034576 
-max  eCDF diff........ 0.0069152 
-
-var ratio (Tr/Co)..... 0.91562 
-T-test p-value........ 0.71611 
-
-
-***** (V2) religionProtestante *****
-before matching:
-mean treatment........ 0.005305 
-mean control.......... 0.01897 
-std mean diff......... -18.787 
-
-mean raw eQQ diff..... 0.01626 
-med  raw eQQ diff..... 0 
-max  raw eQQ diff..... 1 
-
-mean eCDF diff........ 0.0068326 
-med  eCDF diff........ 0.0068326 
-max  eCDF diff........ 0.013665 
-
-var ratio (Tr/Co)..... 0.28353 
-T-test p-value........ 0.089666 
-
-
-***** (V3) religionJudío *****
-before matching:
-mean treatment........ 0.0079576 
-mean control.......... 0.0081301 
-std mean diff......... -0.19392 
-
-mean raw eQQ diff..... 0.00271 
-med  raw eQQ diff..... 0 
-max  raw eQQ diff..... 1 
-
-mean eCDF diff........ 0.000086261 
-med  eCDF diff........ 0.000086261 
-max  eCDF diff........ 0.00017252 
-
-var ratio (Tr/Co)..... 0.97889 
-T-test p-value........ 0.979 
-
-
-***** (V4) religionCreyente no adherente *****
-before matching:
-mean treatment........ 0.071618 
-mean control.......... 0.056911 
-std mean diff......... 5.6962 
-
-mean raw eQQ diff..... 0.01355 
-med  raw eQQ diff..... 0 
-max  raw eQQ diff..... 1 
-
-mean eCDF diff........ 0.0073537 
-med  eCDF diff........ 0.0073537 
-max  eCDF diff........ 0.014707 
-
-var ratio (Tr/Co)..... 1.2387 
-T-test p-value........ 0.41319 
-
-
-***** (V5) religionAteo *****
-before matching:
-mean treatment........ 0.066313 
-mean control.......... 0.086721 
-std mean diff......... -8.1907 
-
-mean raw eQQ diff..... 0.02168 
-med  raw eQQ diff..... 0 
-max  raw eQQ diff..... 1 
-
-mean eCDF diff........ 0.010204 
-med  eCDF diff........ 0.010204 
-max  eCDF diff........ 0.020408 
-
-var ratio (Tr/Co)..... 0.78171 
-T-test p-value........ 0.29542 
-
-
-***** (V6) religionAgnóstico *****
-before matching:
-mean treatment........ 0.050398 
-mean control.......... 0.04878 
-std mean diff......... 0.73835 
-
-mean raw eQQ diff..... 0 
-med  raw eQQ diff..... 0 
-max  raw eQQ diff..... 0 
-
-mean eCDF diff........ 0.0008087 
-med  eCDF diff........ 0.0008087 
-max  eCDF diff........ 0.0016174 
-
-var ratio (Tr/Co)..... 1.0313 
-T-test p-value........ 0.91909 
-
-
-***** (V7) religionNinguna *****
-before matching:
-mean treatment........ 0.35279 
-mean control.......... 0.31707 
-std mean diff......... 7.4638 
-
-mean raw eQQ diff..... 0.03523 
-med  raw eQQ diff..... 0 
-max  raw eQQ diff..... 1 
-
-mean eCDF diff........ 0.017856 
-med  eCDF diff........ 0.017856 
-max  eCDF diff........ 0.035712 
-
-var ratio (Tr/Co)..... 1.0544 
-T-test p-value........ 0.30204 
-
-
-Before Matching Minimum p.value: 0.089666 
-Variable Name(s): religionProtestante  Number(s): 2 </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>bal1.label <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Evangelico"</span>, <span class="st">"Protestante"</span>, <span class="st">"Judio"</span>, <span class="st">"Creyente no adherente"</span>, <span class="st">"Ateo"</span>, <span class="st">"Agnostico"</span>, <span class="st">"Ninguna"</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Funcion de ebal</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>bal1.m1  <span class="ot">&lt;-</span> <span class="fu">baltest.collect</span>(<span class="at">matchbal.out=</span> bal1, <span class="at">var.names =</span> bal1.label, <span class="at">after=</span><span class="cn">FALSE</span>)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(bal1.m1,<span class="dv">2</span>)  <span class="co"># Desbalance con relig creyente no adeherente (16.3) con menos casos, ahora no hay desbalance </span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                      mean.Tr mean.Co  sdiff sdiff.pooled var.ratio T pval
-Evangelico               0.07    0.08  -2.73        -2.66      0.92   0.72
-Protestante              0.01    0.02 -18.79       -12.49      0.28   0.09
-Judio                    0.01    0.01  -0.19        -0.19      0.98   0.98
-Creyente no adherente    0.07    0.06   5.70         5.99      1.24   0.41
-Ateo                     0.07    0.09  -8.19        -7.67      0.78   0.30
-Agnostico                0.05    0.05   0.74         0.74      1.03   0.92
-Ninguna                  0.35    0.32   7.46         7.56      1.05   0.30
-                      KS pval qqmeandiff qqmeddiff qqmaxdiff
-Evangelico                 NA       0.00      0.00      0.01
-Protestante                NA       0.01      0.01      0.01
-Judio                      NA       0.00      0.00      0.00
-Creyente no adherente      NA       0.01      0.01      0.01
-Ateo                       NA       0.01      0.01      0.02
-Agnostico                  NA       0.00      0.00      0.00
-Ninguna                    NA       0.02      0.02      0.04</code></pre>
+</figure>
 </div>
 </div>
 </section>
 <section id="estimación-average-treatment-effect" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Estimación Average Treatment Effect</h1>
-<div class="cell tbl-cap-location-top">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>db <span class="ot">&lt;-</span> db <span class="sc">%&gt;%</span> </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">aleatorio =</span> <span class="fu">factor</span>(aleatorio, <span class="at">levels =</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Control"</span>, <span class="st">"Tratamiento"</span>))) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Aleatorio =</span> aleatorio)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>dep_vars <span class="ot">&lt;-</span> <span class="fu">colnames</span>(db[<span class="dv">12</span><span class="sc">:</span><span class="dv">30</span>])  </span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>results_list <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(dep_var <span class="cf">in</span> dep_vars) {</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  formula <span class="ot">&lt;-</span> <span class="fu">as.formula</span>(<span class="fu">paste</span>(dep_var, <span class="st">"~ Aleatorio"</span>))</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> <span class="fu">lm_robust</span>(<span class="at">formula =</span> formula, <span class="at">data =</span> db, <span class="at">se_type =</span> <span class="st">"HC2"</span>, <span class="at">alpha =</span> <span class="fl">0.05</span>)</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  results_list[[dep_var]] <span class="ot">&lt;-</span> result</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="fu">tab_model</span>(results_list, <span class="at">show.se =</span> T, <span class="at">show.ci =</span> F, <span class="at">p.style =</span> <span class="st">"stars"</span>, <span class="at">show.reflvl =</span> T, <span class="at">string.pred =</span> <span class="st">"Predictores"</span>, <span class="at">string.est =</span> <span class="st">"Beta"</span>, <span class="at">string.intercept =</span> <span class="st">"(Intercepto)"</span>, <span class="at">string.se =</span> <span class="st">"ES"</span>, <span class="at">auto.label =</span> T)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-tbl-cap-location="top">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>db2 <span class="ot">&lt;-</span> db <span class="sc">%&gt;%</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">asignacion =</span> <span class="fu">factor</span>(asignacion, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Control"</span>, <span class="st">"Tratamiento"</span>)),</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">.cols =</span> <span class="fu">starts_with</span>(<span class="fu">c</span>(<span class="st">"p1_"</span>, <span class="st">"p9_"</span>)),</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">.fns =</span> <span class="sc">~</span> <span class="fu">as.numeric</span>(.)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">market_justice_i =</span> <span class="fu">mean</span>(p9_3, p9_4, p9_5))</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>dep_vars1 <span class="ot">&lt;-</span> <span class="fu">colnames</span>(db2[<span class="dv">10</span><span class="sc">:</span><span class="dv">19</span>])  </span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>results_list <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(dep_var <span class="cf">in</span> dep_vars1) {</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  formula <span class="ot">&lt;-</span> <span class="fu">as.formula</span>(<span class="fu">paste</span>(dep_var, <span class="st">"~ asignacion"</span>))</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> <span class="fu">lm_robust</span>(<span class="at">formula =</span> formula, <span class="at">data =</span> db2, <span class="at">se_type =</span> <span class="st">"HC2"</span>)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  results_list[[dep_var]] <span class="ot">&lt;-</span> result</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="fu">tab_model</span>(results_list, <span class="at">show.se=</span><span class="cn">TRUE</span>,</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>          <span class="at">show.ci=</span><span class="cn">FALSE</span>,</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>          <span class="at">digits=</span><span class="dv">3</span>,</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>          <span class="at">p.style =</span> <span class="st">"stars"</span>,</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>          <span class="at">string.pred =</span> <span class="st">"Predictores"</span>,</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>          <span class="at">string.est =</span> <span class="st">"β"</span>,</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>          <span class="at">show.reflvl =</span> T, </span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>          <span class="at">auto.label =</span> T)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tbl-ate-meritocracy" class="cell quarto-float anchored" data-tbl-cap-location="top">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ate-meritocracy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;3: Modelos de regresión OLS para variables sobre meritocracia
+</figcaption>
+<div aria-describedby="tbl-ate-meritocracy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-ate" class="anchored">
+<div>
+<table class="do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true">
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">&nbsp;</td>
+<td colspan="2" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">p1_1</td>
+<td colspan="2" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">p1_2</td>
+<td colspan="2" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">p1_3</td>
+<td colspan="2" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">p1_4</td>
+<td colspan="2" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">p1_5</td>
+<td colspan="2" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">p1_6</td>
+<td colspan="2" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">p1_7</td>
+<td colspan="2" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">p1_8</td>
+<td colspan="2" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">p1_9</td>
+<td colspan="2" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">p1_10</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">Predictores</td>
+<td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">β</td>
+<td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">std. Error</td>
+<td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">β</td>
+<td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">std. Error</td>
+<td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">β</td>
+<td style="text-align: center;">std. Error</td>
+<td style="text-align: center;">β</td>
+<td style="text-align: center;">std. Error</td>
+<td style="text-align: center;">β</td>
+<td style="text-align: center;">std. Error</td>
+<td style="text-align: center;">β</td>
+<td style="text-align: center;">std. Error</td>
+<td style="text-align: center;">β</td>
+<td style="text-align: center;">std. Error</td>
+<td style="text-align: center;">β</td>
+<td style="text-align: center;">std. Error</td>
+<td style="text-align: center;">β</td>
+<td style="text-align: center;">std. Error</td>
+<td style="text-align: center;">β</td>
+<td style="text-align: center;">std. Error</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">(Intercept)</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">2.781 <sup>***</sup></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.037</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">2.805 <sup>***</sup></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.037</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">3.056 <sup>***</sup></td>
+<td style="text-align: center;">0.045</td>
+<td style="text-align: center;">3.071 <sup>***</sup></td>
+<td style="text-align: center;">0.041</td>
+<td style="text-align: center;">3.405 <sup>***</sup></td>
+<td style="text-align: center;">0.039</td>
+<td style="text-align: center;">2.654 <sup>***</sup></td>
+<td style="text-align: center;">0.040</td>
+<td style="text-align: center;">2.569 <sup>***</sup></td>
+<td style="text-align: center;">0.039</td>
+<td style="text-align: center;">2.668 <sup>***</sup></td>
+<td style="text-align: center;">0.039</td>
+<td style="text-align: center;">2.325 <sup>***</sup></td>
+<td style="text-align: center;">0.052</td>
+<td style="text-align: center;">2.162 <sup>***</sup></td>
+<td style="text-align: center;">0.041</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">Control</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><em>Reference</em></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><em>Reference</em></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><em>Reference</em></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><em>Reference</em></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><em>Reference</em></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><em>Reference</em></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><em>Reference</em></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><em>Reference</em></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><em>Reference</em></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><em>Reference</em></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">Tratamiento</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.057 <sup></sup></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.054</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.064 <sup></sup></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.053</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.061 <sup></sup></td>
+<td style="text-align: center;">0.066</td>
+<td style="text-align: center;">-0.021 <sup></sup></td>
+<td style="text-align: center;">0.059</td>
+<td style="text-align: center;">-0.032 <sup></sup></td>
+<td style="text-align: center;">0.055</td>
+<td style="text-align: center;">-0.044 <sup></sup></td>
+<td style="text-align: center;">0.059</td>
+<td style="text-align: center;">-0.058 <sup></sup></td>
+<td style="text-align: center;">0.055</td>
+<td style="text-align: center;">-0.023 <sup></sup></td>
+<td style="text-align: center;">0.056</td>
+<td style="text-align: center;">0.043 <sup></sup></td>
+<td style="text-align: center;">0.074</td>
+<td style="text-align: center;">-0.113 <sup></sup></td>
+<td style="text-align: center;">0.058</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">Observations</td>
+<td colspan="2" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">828</td>
+<td colspan="2" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">828</td>
+<td colspan="2" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">828</td>
+<td colspan="2" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">828</td>
+<td colspan="2" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">828</td>
+<td colspan="2" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">828</td>
+<td colspan="2" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">828</td>
+<td colspan="2" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">828</td>
+<td colspan="2" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">828</td>
+<td colspan="2" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">828</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">R<sup>2</sup> / R<sup>2</sup> adjusted</td>
+<td colspan="2" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.001 / 0.000</td>
+<td colspan="2" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.002 / 0.001</td>
+<td colspan="2" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.001 / -0.000</td>
+<td colspan="2" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.000 / -0.001</td>
+<td colspan="2" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.000 / -0.001</td>
+<td colspan="2" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.001 / -0.001</td>
+<td colspan="2" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.001 / 0.000</td>
+<td colspan="2" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.000 / -0.001</td>
+<td colspan="2" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.000 / -0.001</td>
+<td colspan="2" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.005 / 0.003</td>
+</tr>
+<tr class="even">
+<td colspan="21" style="text-align: right; font-style: italic; border-top: double black;">* p&lt;0.05&nbsp;&nbsp;&nbsp;** p&lt;0.01&nbsp;&nbsp;&nbsp;*** p&lt;0.001</td>
+</tr>
+</tbody>
+</table>
 
-<table style="border-collapse:collapse; border:none;"><caption>Tabla&nbsp;3:  Regresión OLS con ES robustos para variables dependientes </caption>
-<tbody><tr>
-<th style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm;  text-align:left; ">&nbsp;</th>
-<th colspan="2" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">merit_esfuerzo</th>
-<th colspan="2" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">merit_talento</th>
-<th colspan="2" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">percep_padres_ricos</th>
-<th colspan="2" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">percep_buenos_contactos</th>
-<th colspan="2" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">recom_esfuerzo</th>
-<th colspan="2" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">recom_talento</th>
-<th colspan="2" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">just_padres_ricos</th>
-<th colspan="2" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">just_buenos_contactos</th>
-<th colspan="2" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">igualdad_oportunidades</th>
-<th colspan="2" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">percep_merecimiento</th>
-<th colspan="2" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">escuela_esfuerzo</th>
-<th colspan="2" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">escuela_talento</th>
-<th colspan="2" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">escuela_calificaciones</th>
-<th colspan="2" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">percep_desigualdad</th>
-<th colspan="2" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">pref_redis</th>
-<th colspan="2" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">just_edu</th>
-<th colspan="2" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">just_salud</th>
-<th colspan="2" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">just_pension</th>
-<th colspan="2" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">just_talento</th>
-</tr>
-<tr>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  text-align:left; ">Predictores</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">Beta</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">ES</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">Beta</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">ES</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">Beta</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  col7">ES</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  col8">Beta</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  col9">ES</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  0">Beta</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  1">ES</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  2">Beta</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  3">ES</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  4">Beta</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  5">ES</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  6">Beta</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  7">ES</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  8">Beta</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  9">ES</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  0">Beta</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  1">ES</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  2">Beta</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  3">ES</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  4">Beta</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  5">ES</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  6">Beta</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  7">ES</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  8">Beta</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  9">ES</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  0">Beta</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  1">ES</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  2">Beta</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  3">ES</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  4">Beta</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  5">ES</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  6">Beta</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  7">ES</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  8">Beta</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  9">ES</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">(Intercepto)</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">2.78 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.04</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">2.79 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.04</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">3.02 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">0.05</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8">3.02 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">0.04</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">3.36 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  1">0.04</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2">2.66 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.04</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">2.59 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.04</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 6">2.62 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 7">0.04</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 8">2.38 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 9">0.06</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn0 0">2.20 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn0 1">0.05</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2">3.18 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.04</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">3.11 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.04</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  6">2.89 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  7">0.04</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  8">3.21 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  9">0.04</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">2.85 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  1">0.04</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2">2.25 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.05</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">1.99 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.05</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 6">2.05 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 7">0.04</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 8">2.49 <sup>***</sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 9">0.04</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Control</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "><em>Reference</em></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "><em>Reference</em></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  "><em>Reference</em></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7"></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8"><em>Reference</em></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9"></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0"><em>Reference</em></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  1"></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2"><em>Reference</em></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3"></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4"><em>Reference</em></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5"></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 6"><em>Reference</em></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 7"></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 8"><em>Reference</em></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 9"></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn0 0"><em>Reference</em></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn0 1"></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2"><em>Reference</em></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3"></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4"><em>Reference</em></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5"></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  6"><em>Reference</em></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  7"></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  8"><em>Reference</em></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  9"></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0"><em>Reference</em></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  1"></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2"><em>Reference</em></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3"></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4"><em>Reference</em></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5"></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 6"><em>Reference</em></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 7"></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 8"><em>Reference</em></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 9"></td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">Tratamiento</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.05 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.06</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.07 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">0.06</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">-0.08 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">0.07</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col8">-0.01 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col9">0.06</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">-0.01 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  1">0.06</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2">-0.08 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.06</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">-0.10 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.06</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 6">-0.01 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 7">0.06</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 8">0.01 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 9">0.08</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn0 0">-0.09 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn0 1">0.06</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2">0.01 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.06</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">0.08 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.05</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  6">0.02 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  7">0.06</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  8">0.06 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  9">0.06</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  0">0.03 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  1">0.06</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  2">-0.02 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  3">0.07</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  4">-0.03 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  5">0.07</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 6">0.02 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn8 7">0.06</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 8">0.06 <sup></sup></td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center; modelcolumn9 9">0.06</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm; border-top:1px solid;">Observations</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">748</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">741</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">739</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">737</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">742</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">738</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">742</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">742</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">745</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">745</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">745</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">745</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">742</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">748</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">742</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">744</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">742</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">745</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="2">743</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">R<sup>2</sup> / R<sup>2</sup> adjusted</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.001 / -0.000</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.002 / 0.001</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.002 / 0.000</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.000 / -0.001</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.000 / -0.001</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.002 / 0.001</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.004 / 0.002</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.000 / -0.001</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.000 / -0.001</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.002 / 0.001</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.000 / -0.001</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.003 / 0.002</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.000 / -0.001</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.001 / -0.000</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.000 / -0.001</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.000 / -0.001</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.000 / -0.001</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.000 / -0.001</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="2">0.001 / -0.000</td>
-</tr>
-<tr>
-<td colspan="39" style="font-style:italic; border-top:double black; text-align:right;">* p&lt;0.05&nbsp;&nbsp;&nbsp;** p&lt;0.01&nbsp;&nbsp;&nbsp;*** p&lt;0.001</td>
-</tr>
-
-</tbody></table>
 
 </div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<div class="cell" data-tbl-cap-location="top">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dep_vars2 <span class="ot">&lt;-</span> <span class="fu">colnames</span>(db2[<span class="dv">20</span><span class="sc">:</span><span class="dv">26</span>])  </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>results_list <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(dep_var <span class="cf">in</span> dep_vars2) {</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  formula <span class="ot">&lt;-</span> <span class="fu">as.formula</span>(<span class="fu">paste</span>(dep_var, <span class="st">"~ asignacion"</span>))</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> <span class="fu">lm_robust</span>(<span class="at">formula =</span> formula, <span class="at">data =</span> db2, <span class="at">se_type =</span> <span class="st">"HC2"</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  results_list[[dep_var]] <span class="ot">&lt;-</span> result</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="fu">tab_model</span>(results_list, <span class="at">show.se=</span><span class="cn">TRUE</span>,</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>          <span class="at">show.ci=</span><span class="cn">FALSE</span>,</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>          <span class="at">digits=</span><span class="dv">3</span>,</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>          <span class="at">p.style =</span> <span class="st">"stars"</span>,</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>          <span class="at">string.pred =</span> <span class="st">"Predictores"</span>,</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>          <span class="at">string.est =</span> <span class="st">"β"</span>,</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>          <span class="at">show.reflvl =</span> T, </span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>          <span class="at">auto.label =</span> T)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tbl-ate-justifiyng" class="cell quarto-float anchored" data-tbl-cap-location="top">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ate-justifiyng-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;4: Modelos de regresión OLS para variables sobre justificación desigualdad
+</figcaption>
+<div aria-describedby="tbl-ate-justifiyng-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div>
+<table class="do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true">
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">&nbsp;</td>
+<td colspan="2" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">p9_1</td>
+<td colspan="2" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">p9_2</td>
+<td colspan="2" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">p9_3</td>
+<td colspan="2" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">p9_4</td>
+<td colspan="2" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">p9_5</td>
+<td colspan="2" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">p9_6</td>
+<td colspan="2" data-quarto-table-cell-role="th" style="text-align: center; border-top: double; font-style: normal; font-weight: bold; padding: 0.2cm;">market_justice_i</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">Predictores</td>
+<td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">β</td>
+<td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">std. Error</td>
+<td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">β</td>
+<td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">std. Error</td>
+<td style="text-align: center; border-bottom: 1px solid; font-style: italic; font-weight: normal;">β</td>
+<td style="text-align: center;">std. Error</td>
+<td style="text-align: center;">β</td>
+<td style="text-align: center;">std. Error</td>
+<td style="text-align: center;">β</td>
+<td style="text-align: center;">std. Error</td>
+<td style="text-align: center;">β</td>
+<td style="text-align: center;">std. Error</td>
+<td style="text-align: center;">β</td>
+<td style="text-align: center;">std. Error</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">(Intercept)</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">3.278 <sup>***</sup></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.038</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">2.899 <sup>***</sup></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.036</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">2.296 <sup>***</sup></td>
+<td style="text-align: center;">0.043</td>
+<td style="text-align: center;">2.007 <sup>***</sup></td>
+<td style="text-align: center;">0.046</td>
+<td style="text-align: center;">2.012 <sup>***</sup></td>
+<td style="text-align: center;">0.041</td>
+<td style="text-align: center;">2.508 <sup>***</sup></td>
+<td style="text-align: center;">0.039</td>
+<td style="text-align: center;">2.296 <sup>***</sup></td>
+<td style="text-align: center;">0.043</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">Control</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><em>Reference</em></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><em>Reference</em></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;"><em>Reference</em></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><em>Reference</em></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><em>Reference</em></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><em>Reference</em></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><em>Reference</em></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">Tratamiento</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.003 <sup></sup></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.055</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.004 <sup></sup></td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">0.052</td>
+<td style="text-align: left; padding: 0.2cm; vertical-align: top;">-0.031 <sup></sup></td>
+<td style="text-align: center;">0.062</td>
+<td style="text-align: center;">-0.012 <sup></sup></td>
+<td style="text-align: center;">0.065</td>
+<td style="text-align: center;">0.078 <sup></sup></td>
+<td style="text-align: center;">0.060</td>
+<td style="text-align: center;">0.035 <sup></sup></td>
+<td style="text-align: center;">0.058</td>
+<td style="text-align: center;">-0.031 <sup></sup></td>
+<td style="text-align: center;">0.062</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">Observations</td>
+<td colspan="2" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">828</td>
+<td colspan="2" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">828</td>
+<td colspan="2" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">828</td>
+<td colspan="2" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">828</td>
+<td colspan="2" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">828</td>
+<td colspan="2" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">828</td>
+<td colspan="2" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm; border-top: 1px solid;">828</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">R<sup>2</sup> / R<sup>2</sup> adjusted</td>
+<td colspan="2" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.000 / -0.001</td>
+<td colspan="2" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.000 / -0.001</td>
+<td colspan="2" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.000 / -0.001</td>
+<td colspan="2" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.000 / -0.001</td>
+<td colspan="2" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.002 / 0.001</td>
+<td colspan="2" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.000 / -0.001</td>
+<td colspan="2" style="text-align: left; padding: 0.2cm; vertical-align: top; padding-top: 0.1cm; padding-bottom: 0.1cm;">0.000 / -0.001</td>
+</tr>
+<tr class="even">
+<td colspan="15" style="text-align: right; font-style: italic; border-top: double black;">* p&lt;0.05&nbsp;&nbsp;&nbsp;** p&lt;0.01&nbsp;&nbsp;&nbsp;*** p&lt;0.001</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</div>
+</figure>
 </div>
 </div>
 </section>
@@ -2151,9 +1792,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -2189,10 +1844,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -2202,8 +1874,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -2215,9 +1896,245 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -2258,6 +2175,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

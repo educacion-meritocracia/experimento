@@ -24,7 +24,7 @@ format:
 }
 </style>
 
-<img class="logo" src="logo/logo_edumer.png" width="200" height="170">
+<img class="logo" src="edumer.png" width="200" height="170">
 
 <div style="text-align: justify">
 
@@ -60,7 +60,9 @@ pacman::p_load(tidyverse,
                summarytools,
                here,
                vtable,
-               texreg)
+               texreg,
+               rio,
+               sjlabelled)
 
 options(scipen=999)
 rm(list = ls())
@@ -71,10 +73,183 @@ rm(list = ls())
 #| echo: false
 #| output: false
 
-load(file = here("output", "db_proc.RData"))
-glimpse(db)
+db_or <- rio::import(file = "https://github.com/educacion-meritocracia/edumer-data/raw/main/output/data/db_proc_students.RData")
 
 ```
+
+```{r}
+#| label: processing
+#| echo: false
+#| output: false
+
+# Select ----
+
+db <- db_or %>% 
+  select(id_estudiante, dep_escuela = d2, nivel_estudiante, asignacion, 
+         tratamiento, control, sexo = p20, edad = p21_ano, 
+         nacionalidad = p22_1, etnia = p24, religion = p28, 
+         starts_with(c("p1_", "p9_")))
+
+# Filter ----
+# NO
+
+# Recode and transform ----
+
+# 1 Experimental desing variables
+
+db %>% 
+  select(asignacion, tratamiento, control) %>% 
+  frq(.)
+
+db <- db %>% 
+  mutate(asignacion = factor(asignacion,
+                           levels = 1:2,
+                           labels = c("Tratamiento", "Control")),
+         across(.cols = c(tratamiento, control),
+                .fns = ~ factor(., levels = 1:2, labels = c("Colegio Municipal", "Colegio Privado"))))
+
+db %>% 
+  select(asignacion, tratamiento, control) %>% 
+  frq(.) # check
+
+
+# 2 Meritocracy variables
+
+db %>% 
+  select(starts_with("p1_")) %>% 
+  frq(.)
+
+db <- db %>% 
+  mutate(
+    across(
+      .cols = starts_with("p1_"),
+      .fns = ~ factor(., levels = c(1,2,3,4), labels = c("Muy en desacuerdo", "En desacuerdo", "De acuerdo", "Muy de acuerdo")) %>% 
+        set_na(., na = c(88,99), drop.levels = T)
+      )
+    )
+
+db %>% 
+  select(starts_with("p1_")) %>% 
+  frq(.) # check
+
+# 3 Preferences and inequality
+
+db %>% 
+  select(starts_with("p9_")) %>% 
+  frq(.)
+
+db <- db %>% 
+  mutate(
+    across(
+      .cols = starts_with("p9_"),
+      .fns = ~ factor(., levels = c(1,2,3,4), labels = c("Muy en desacuerdo", "En desacuerdo", "De acuerdo", "Muy de acuerdo")) %>% 
+        set_na(., na = c(88,99), drop.levels = T)
+    )
+  )
+
+db %>% 
+  select(starts_with("p9_")) %>% 
+  frq(.) # check
+
+# Demografic
+
+# Sex
+frq(db$sexo)
+
+db$sexo <- factor(db$sexo, 
+                     levels = 1:3, 
+                     labels = c("Hombre", "Mujer", "Otro"))
+
+
+# Age
+frq(db$edad)
+
+db$edad <- (2023-db$edad)
+
+# Ethnic
+frq(db$etnia)
+
+db <- db %>% 
+  mutate(etnia = factor(etnia, levels = 1:5, labels = c("Mapuche", "Aimara","Rapa Nui", "Quechua", "No, ninguno anteriores")),
+         etnia = set_na(etnia, na = c(88,99), drop.levels = T))
+
+# Nationality
+frq(db$nacionalidad)
+
+db <- db %>% 
+  mutate(nacionalidad = factor(nacionalidad, levels = 1:2, labels = c("Chile", "Otra")))
+
+# Religion
+
+frq(db$religion)
+
+db <- db %>% 
+  mutate(religion = factor(religion, 
+                      levels = 1:8, 
+                      labels = c("Católico", "Evangélico", "Protestante", 
+                                 "Judío", "Creyente no adherente", "Ateo",
+                                 "Agnóstico", "Ninguna")),
+         religion = set_na(religion, na = c(88,99), drop.levels = T))
+
+
+# Curse level
+frq(db$nivel_estudiante)
+
+db$nivel_estudiante <- if_else(db$nivel_estudiante %in% c(1,2), 1, 2)
+db$nivel_estudiante <- factor(db$nivel_estudiante, 
+                              levels = 1:2,
+                              labels = c("Básica", "Media"))
+# School dependency
+ #frq(db$dep_escuela)
+
+#db <- db %>%
+#  mutate(dep_escuela = case_when(
+#    dep_escuela %in% c(2, 3, 4, 7, 8, 10, 11) ~ 1,
+#   dep_escuela == 5 ~ 2,
+#    dep_escuela == 6 ~ 3,
+#    TRUE ~ NA_integer_
+#  ))
+
+#db$dep_escuela <- factor(db$dep_escuela, levels=c(1,2,3), labels=c("Colegio Particular Subvencionado", "Colegio Municipal","Colegio Privado"))
+
+db$nivel_estudiante <- set_label(db$nivel_estudiante, label = get_label(db_or$nivel_estudiante))
+db$asignacion <- set_label(db$asignacion, label = get_label(db_or$asignacion))
+db$tratamiento <- set_label(db$tratamiento, label = get_label(db_or$tratamiento))
+db$control <- set_label(db$control, label = get_label(db_or$control))
+db$sexo <- set_label(db$sexo, label = get_label(db_or$p20))
+db$edad <- set_label(db$edad, label = "Edad")
+db$nacionalidad <- set_label(db$nacionalidad, label = get_label(db_or$p22_1))
+db$etnia <- set_label(db$etnia, label = get_label(db_or$p24))
+db$religion <- set_label(db$religion, label = get_label(db_or$p28))
+
+db$p1_1 <- set_label(db$p1_1, label = get_label(db_or$p1_1))
+db$p1_2 <- set_label(db$p1_2, label = get_label(db_or$p1_2))
+db$p1_3 <- set_label(db$p1_3, label = get_label(db_or$p1_3))
+db$p1_4 <- set_label(db$p1_4, label = get_label(db_or$p1_4))
+db$p1_5 <- set_label(db$p1_5, label = get_label(db_or$p1_5))
+db$p1_6 <- set_label(db$p1_6, label = get_label(db_or$p1_6))
+db$p1_7 <- set_label(db$p1_7, label = get_label(db_or$p1_7))
+db$p1_8 <- set_label(db$p1_8, label = get_label(db_or$p1_8))
+db$p1_9 <- set_label(db$p1_9, label = get_label(db_or$p1_9))
+db$p1_10 <- set_label(db$p1_10, label = get_label(db_or$p1_10))
+
+db$p9_1 <- set_label(db$p9_1, label = get_label(db_or$p9_1))
+db$p9_2 <- set_label(db$p9_2, label = get_label(db_or$p9_2))
+db$p9_3 <- set_label(db$p9_3, label = get_label(db_or$p9_3))
+db$p9_4 <- set_label(db$p9_4, label = get_label(db_or$p9_4))
+db$p9_5 <- set_label(db$p9_5, label = get_label(db_or$p9_5))
+db$p9_6 <- set_label(db$p9_6, label = get_label(db_or$p9_6))
+
+
+# Missing treatment
+colSums(is.na(db))
+
+db <- db %>% 
+  select(-c(tratamiento, control)) %>% 
+  na.omit()
+
+```
+
 
 # Descriptivos
 
@@ -86,9 +261,7 @@ glimpse(db)
 colnames(db) <- sapply(colnames(db), function(x) paste(toupper(substring(x, 1, 1)), substring(x, 2), sep = ""))
 
 db %>% 
-  select(-Id) %>% 
-  mutate(Aleatorio = factor(Aleatorio, levels = 1:2, labels = c("Tratados", "Controles")),
-         Check_comprension = factor(Check_comprension, levels = 0:1, labels = c("No", "Si"))) %>% 
+  select(-Id_estudiante) %>% 
   vtable::st(summ.names = c("N", "Media / Frecuencia", "Desv. Est.", "Min", "Pctl.25", "Pctl.75", "Max"), title = "Estadísticos descriptivos")
 
 ```
@@ -101,26 +274,36 @@ db %>%
 #| tbl-cap-location: top
 
 db <- db %>% 
-  janitor::clean_names() %>% 
-  select(-id) %>% 
-  mutate(aleatorio = if_else(aleatorio == 1, 1, 0),
-         across(
-           .cols = c(12:30),
-           .fns = ~ as.numeric(.)))
+  janitor::clean_names()
 
-m0 <- lm(aleatorio ~ sexo + edad + etni + religion + 
-     nivel_curso + dep_escuela + check_comprension,
-     data = db)
+db1 <- db %>% 
+  select(-id_estudiante) %>% 
+  mutate(asignacion = if_else(asignacion == "Tratamiento", 1, 0))
 
-tab_model(m0, show.se = T, show.ci = F, p.style = "stars", show.reflvl = T, string.pred = "Predictores", string.est = "Beta", string.intercept = "(Intercepto)", string.se = "ES", auto.label = T)
+m0 <- lm(asignacion ~ sexo + edad + etnia + religion + 
+     nacionalidad + nivel_estudiante,
+     data = db1)
+
+tab_model(m0, 
+          show.se=TRUE,
+          show.ci=FALSE,
+          digits=3,
+          p.style = "stars",
+          dv.labels = "Modelo 1",
+          string.pred = "Predictores",
+          string.est = "β",
+          show.reflvl = T, 
+          auto.label = T)
 
 ```
 
 ```{r}
+#| label: matchbalance
+#| include: false
 
-df_bal <- db %>% select(aleatorio, religion)
+df_bal <- db1 %>% select(asignacion, religion)
 
-bal1 <- MatchBalance(aleatorio ~.,
+bal1 <- MatchBalance(asignacion ~.,
                      data = df_bal,
                      match.out = NULL, 
                      ks =TRUE)
@@ -130,8 +313,6 @@ bal1.label <- c("Evangelico", "Protestante", "Judio", "Creyente no adherente", "
 # Funcion de ebal
 bal1.m1  <- baltest.collect(matchbal.out= bal1, var.names = bal1.label, after=FALSE)
 round(bal1.m1,2)  # Desbalance con relig creyente no adeherente (16.3) con menos casos, ahora no hay desbalance 
-
-
 
 ```
 
@@ -143,25 +324,64 @@ round(bal1.m1,2)  # Desbalance con relig creyente no adeherente (16.3) con menos
 
 
 ```{r}
-#| label: tbl-ate
-#| tbl-cap: "Regresión OLS con ES robustos para variables dependientes"
+#| label: tbl-ate-meritocracy
+#| tbl-cap: "Modelos de regresión OLS para variables sobre meritocracia"
 #| tbl-cap-location: top
 
-db <- db %>% 
-  mutate(aleatorio = factor(aleatorio, levels = 0:1, labels = c("Control", "Tratamiento"))) %>% 
-  rename(Aleatorio = aleatorio)
+db2 <- db %>% 
+  mutate(
+    asignacion = factor(asignacion, levels = c("Control", "Tratamiento")),
+    across(
+      .cols = starts_with(c("p1_", "p9_")),
+      .fns = ~ as.numeric(.)
+    )
+  ) %>% 
+  rowwise() %>% 
+  mutate(market_justice_i = mean(p9_3, p9_4, p9_5))
 
-dep_vars <- colnames(db[12:30])  
+dep_vars1 <- colnames(db2[10:19])  
 
 results_list <- list()
 
-for(dep_var in dep_vars) {
-  formula <- as.formula(paste(dep_var, "~ Aleatorio"))
-  result <- lm_robust(formula = formula, data = db, se_type = "HC2", alpha = 0.05)
+for(dep_var in dep_vars1) {
+  formula <- as.formula(paste(dep_var, "~ asignacion"))
+  result <- lm_robust(formula = formula, data = db2, se_type = "HC2")
   results_list[[dep_var]] <- result
 }
 
-tab_model(results_list, show.se = T, show.ci = F, p.style = "stars", show.reflvl = T, string.pred = "Predictores", string.est = "Beta", string.intercept = "(Intercepto)", string.se = "ES", auto.label = T)
+tab_model(results_list, show.se=TRUE,
+          show.ci=FALSE,
+          digits=3,
+          p.style = "stars",
+          string.pred = "Predictores",
+          string.est = "β",
+          show.reflvl = T, 
+          auto.label = T)
 
 ```
 
+```{r}
+#| label: tbl-ate-justifiyng
+#| tbl-cap: "Modelos de regresión OLS para variables sobre justificación desigualdad"
+#| tbl-cap-location: top
+
+dep_vars2 <- colnames(db2[20:26])  
+
+results_list <- list()
+
+for(dep_var in dep_vars2) {
+  formula <- as.formula(paste(dep_var, "~ asignacion"))
+  result <- lm_robust(formula = formula, data = db2, se_type = "HC2")
+  results_list[[dep_var]] <- result
+}
+
+tab_model(results_list, show.se=TRUE,
+          show.ci=FALSE,
+          digits=3,
+          p.style = "stars",
+          string.pred = "Predictores",
+          string.est = "β",
+          show.reflvl = T, 
+          auto.label = T)
+
+```
